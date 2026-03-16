@@ -1,0 +1,6 @@
+{
+    "version": "2.2.0",
+    "autoload": {
+        "ITE Tech. Inc. ITE Device(8910) Keyboard": "home"
+    }
+}

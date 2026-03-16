@@ -1,0 +1,106 @@
+* {
+	border-radius: 0px !important;
+}
+
+#workbench\.parts\.editor > div.content.empty > div > div > div > div > div.monaco-scrollable-element > div.split-view-container > div > div > div.editor-group-watermark > div.shortcuts > div {
+	display: none !important;
+}
+
+#workbench\.parts\.editor > div.content > div > div > div > div > div.monaco-scrollable-element > div.split-view-container > div > div > div.editor-container > div > div > div.overflow-guard > div.overlayWidgets > div.editor-widget.find-widget.visible {
+	top: 10px !important;
+	border-top: 1px solid var(--vscode-widget-border);
+}
+
+/* #workbench\.parts\.panel > .monaco-workbench .part>.composite.header-or-footer, .monaco-workbench .part>.composite.title {
+	color: #00000000;
+} */
+
+/* _PRIMARY_BEGIN */
+
+#workbench\.parts\.editor > div.content.empty > div > div > div > div > div.monaco-scrollable-element > div.split-view-container > div > div > div.editor-group-watermark > div.letterpress {
+	/* background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 40 40'%3E%3Cpath fill='' fill-rule='evenodd' d='M30.235 39.884a2.5 2.5 0 0 1-1.781-.73L12.7 24.78l-3.46 2.624-3.406 2.582a1.67 1.67 0 0 1-1.082.338 1.66 1.66 0 0 1-1.046-.431l-2.2-2a1.666 1.666 0 0 1 0-2.463L7.458 20 4.67 17.453 1.507 14.57a1.665 1.665 0 0 1 0-2.463l2.2-2q.033-.03.068-.058a1.665 1.665 0 0 1 2.062-.04l6.863 5.21L28.452.844q.14-.138.3-.254a2.5 2.5 0 0 1 1.541-.475c.351.009.699.091 1.019.245l8.236 3.961a2.5 2.5 0 0 1 1.415 2.253v.099-.045V33.37v-.045.095q0 .142-.016.282a2.5 2.5 0 0 1-1.4 1.975l-8.235 3.961a2.5 2.5 0 0 1-1.077.246m.716-28.947-11.948 9.062 11.952 9.065z' clip-rule='evenodd' opacity='0.17'/%3E%3C/svg%3E"); */
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 40 40'%3E%3Cpath fill='%23B4BEFE' fill-rule='evenodd' d='M30.235 39.884a2.5 2.5 0 0 1-1.781-.73L12.7 24.78l-3.46 2.624-3.406 2.582a1.67 1.67 0 0 1-1.082.338 1.66 1.66 0 0 1-1.046-.431l-2.2-2a1.666 1.666 0 0 1 0-2.463L7.458 20 4.67 17.453 1.507 14.57a1.665 1.665 0 0 1 0-2.463l2.2-2q.033-.03.068-.058a1.665 1.665 0 0 1 2.062-.04l6.863 5.21L28.452.844q.14-.138.3-.254a2.5 2.5 0 0 1 1.541-.475c.351.009.699.091 1.019.245l8.236 3.961a2.5 2.5 0 0 1 1.415 2.253v.099-.045V33.37v-.045.095q0 .142-.016.282a2.5 2.5 0 0 1-1.4 1.975l-8.235 3.961a2.5 2.5 0 0 1-1.077.246m.716-28.947-11.948 9.062 11.952 9.065z' clip-rule='evenodd' opacity='0.27'/%3E%3C/svg%3E");
+}
+
+/* #list_id_5_0 > div.notification-list-item.expanded > div.notification-list-item-main-row > div.notification-list-item-icon.codicon.codicon-info {
+	color: aliceblue !important;
+} */
+	
+/* _PRIMARY_END */
+
+.quick-input-widget {
+    width: 50% !important;
+    max-width: 1400px !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin-left: unset !important;
+	top: 45% !important;
+}
+
+#terminal > div > div > div.monaco-scrollable-element > div.split-view-container > div > div > div.pane-header.actions-always-visible {
+	background-color: rgba(0, 0, 0, 0) !important;
+}
+
+#workbench\.parts\.sidebar > div.composite.title {
+	height: 2px !important;
+	visibility: hidden;
+}
+
+#workbench\.parts\.sidebar > div.content {
+	height: 2160px !important;
+}
+>
+#workbench\.view\.explorer > div > div > div.monaco-scrollable-element > div.split-view-container > div:nth-child(1) {
+	height: 2160px !important;
+	
+}
+
+#workbench\.view\.explorer > div > div > div.monaco-scrollable-element > div.split-view-container > div:nth-child(2) > div > div.pane-header.actions-always-visible.expanded {
+	top: 16px !important;
+}
+#workbench\.view\.explorer > div > div > div.monaco-scrollable-element > div.split-view-container > div:nth-child(2) > div > div.pane-body {
+	top: 16px !important;
+	position: relative !important;
+}
+
+#workbench\.view\.explorer .twisty-container.codicon-view-pane-container-expanded.codicon, h3.title[custom-hover="true"] {
+	display: flex !important;
+	justify-content: left !important;	
+	transform: translate(9%, -30%) !important;
+	/* padding-bottom: -10px; */
+	/* font-size: 20px !important; */
+}
+
+#workbench\.view\.explorer .pane-header.actions-always-visible.expanded.hidden {
+	display: block !important;
+	padding-top: 2px !important;
+	padding-bottom: 4px !important;
+	padding-left: 8px !important;
+}
+
+#workbench\.view\.explorer > div > div > div.monaco-scrollable-element > div.split-view-container > div > div > div.pane-header.actions-always-visible.expanded.hidden > div.actions > div > div > ul {
+	visibility: collapse !important;
+}
+  
+/* open arrow */
+#workbench\.view\.explorer > div > div > div.monaco-scrollable-element > div.split-view-container > div > div > div.pane-header.actions-always-visible.expanded.hidden > div.twisty-container.codicon-view-pane-container-expanded.codicon {
+	visibility: hidden !important;
+	font-size: 5px !important;
+}
+
+/* closed arrow */
+/* #workbench\.view\.explorer > div > div > div.monaco-scrollable-element > div.split-view-container > div > div > div > div.twisty-container.codicon-view-pane-container-collapsed.codicon {
+	visibility: hidden !important;
+	font-size: 5px !important;
+} */
+ 
+#workbench\.parts\.panel > div.composite.title.has-composite-bar {
+	/* display: none !important; */
+}
+
+#workbench\.parts\.panel > div.composite.title.has-composite-bar {
+	/* margin-left: 0 !important; */
+    padding-left: 0 !important;
+    justify-content: right !important;
+}
+

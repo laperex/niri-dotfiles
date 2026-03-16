@@ -1,0 +1,308 @@
+
+@-moz-document domain("adventofcode.com") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("anilist.co") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("anichart.net") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("boring.example.com") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("search.brave.com") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain('bsky.app') {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain('bstats.org') {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("instructure.com") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("chat.openai.com") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("chatreplay.stream") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("chess.com") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("cinny.in") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain('codeberg.org') {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document regexp("https://crowdin.com(?!/translate).*") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document regexp("https://crowdin.com/translate/.*") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document regexp("https:\\/\\/www.deepl.com\\/?(.*\\/)translator.*$") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("ecosia.org") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("elk.zone") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain('app.formative.com') {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document regexp("https:\/\/(gist\.)*github\.com(?!((\/.+?\/.+?\/commit\/[A-Fa-f0-9]+\.(patch|diff)$)|\/home$|\/features($|\/.*)|\/marketplace($|\/.*)|\/organizations\/plan)).*$") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document regexp("https:\/\/notebooks\.githubusercontent\.com\/view\/ipynb.*") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("mail.google.com") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document regexp("^https?://(www\\.|images\\.)?google\\..*") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document regexp("^https?://(ogs\\.)?google\\..*") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document url-prefix('https://app.graphite.dev') {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("news.ycombinator.com") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("homepage.example.com") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("hoppscotch.io") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("ichi.moe") {
+	*{ border-radius: 0 !important; }
+}
+/* 
+@-moz-document domain('instagram.com') {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document regexp('^.*instagram.com/direct.*') {
+	*{ border-radius: 0 !important; }
+} */
+
+@-moz-document domain("anontube.lvkaszus.pl"), {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document regexp("http:\\/\\/(127\\.0\\.0\\.1|localhost):9090(.*)") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("last.fm") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("libredd.it"), {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("lichess.org") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain('lingva.ml'), {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain('www.linkedin.com') {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("mastodon.social"), {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("mastodon.social"), domain("mstdn.social"), domain("fosstodon.org"), domain("piaille.fr"), domain("tech.lgbt") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain('live.com') {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document regexp(".*https:\\/\\/(www\\.|staging\\.|)modrinth\\.com.*") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("nitter.net"), domain("nitter.unixfox.eu"), domain("nitter.42l.fr"), domain("nitter.fdn.fr"), domain("nitter.1d4.us"), domain("nitter.kavin.rocks"), domain("nitter.namazso.eu"), domain("nitter.hu"), domain("bird.trom.tf"), domain("nitter.it"), domain("twitter.censors.us"), domain("nitter.grimneko.de"), domain("n.hyperborea.cloud"), domain("nitter.ca"), domain("twitter.076.ne.jp"), domain("nitter.mstdn.social"), domain("nitter.fly.dev"), domain("nitter.weiler.rocks"), domain("nitter.sethforprivacy.com"), domain("nttr.stream"), domain("nitter.tiekoetter.com"), domain("nitter.spaceint.fr"), domain("nitter.privacy.com.denitter.mastodon.pro"), domain("nitter.notraxx.chnitter.poast.org"), domain("nitter.bird.froth.zone"), domain("nitter.dcs0.hu"), domain("twitter.beparanoid.de"), domain("n.ramle.be"), domain("nitter.cz"), domain("nitter.privacydev.net"), domain("tweet.lambda.dance"), domain("nitter.kylrth.com"), domain("nitter.oishi-ra.men"), domain("nitter.foss.wtf"),  {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("search.nixos.org") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain('nixos.wiki') {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("paste.rs") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document regexp("^https?:\\/\\/(www|[a-z]{2}).pinterest.(com(.(au|mx))?|co(.(uk|kr))?|at|ca|ch|cl|de|dk|es|fr|ie|it|jp|nz|ph|pt|ru|se)\\/.*") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("planetminecraft.com") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document regexp("https://(account|mail|drive|calendar).proton.me/.*$") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("quizlet.com") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("reddit.com") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document url-prefix("http://ransack.i2p/"), {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document url-prefix("https://searx.baczek.me/"), url-prefix("https://searx.be/") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("app.skiff.com") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain('open.spotify.com') {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("startpage.com") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document url-prefix("moz-extension://"), url-prefix(chrome-extension://) {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document regexp("https:\/\/(.+\.)?substack.com/.*") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document regexp(replace(replace(%("https?://(%s)/.*", @urls), ",", "|"), " ", "", "g")) {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("app.tuta.com"), domain("mail.tutanota.com") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("twitch.tv") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("dashboard.twitch.tv") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("vercel.com") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("web.whatsapp.com") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("wikiwand.com") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document regexp('https?:\\/\\/(?!gaming\\.)(?!consent\\.)(?!vr\\.)(?!music\\.)(?!tv\\.)(?!artists\\.)(?!studio\\.).*youtube(?!kids\\.).*\\.com\\/(?!premium|howyoutubeworks).*$') {
+	*{ border-radius: 0 !important; }
+	#center.ytd-masthead {
+		-moz-box-flex: 0;
+		flex: 0 1 1732px;
+	}
+}
+
+@-moz-document url-prefix('https://www.youtube.com/redirect') {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document url-prefix('https://studio.youtube.com') {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document regexp('<URL>') {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("docs.google.com") {
+	*{
+		border-radius: 0 !important;
+		rx: 0 !important;
+		ry: 0 !important;
+	}
+}
+
+@-moz-document domain("drive.google.com") {
+	*{
+		border-radius: 0 !important;
+		rx: 0 !important;
+		ry: 0 !important;
+	}
+}
+
+@-moz-document domain("meet.google.com") {
+	*{
+		border-radius: 0 !important;
+		rx: 0 !important;
+		ry: 0 !important;
+	}
+}
+
+@-moz-document domain("music.youtube.com") {
+	*{ border-radius: 0 !important; }
+}

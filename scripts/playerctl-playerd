@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Define the RAM disk file path
+RAM_FILE="/dev/shm/active_player"
+
+# Initialize/clear the file on script startup
+> "$RAM_FILE"
+
+# Listen to playerctl events
+while read -r status player; do
+    case "$status" in
+        Playing|Stopped)
+            echo "$player" > "$RAM_FILE"
+            ;;
+        Paused)
+            # Check if any OTHER player is still currently playing
+            playing_player=$(playerctl --all-players metadata --format '{{status}} {{playerName}}' 2>/dev/null | awk '/^Playing/ {print $2; exit}')
+            
+            if [[ -n "$playing_player" ]]; then
+                echo "$playing_player" > "$RAM_FILE"
+            else
+                echo "$player" > "$RAM_FILE"
+            fi
+            ;;
+    esac
+done < <(playerctl metadata --all-players --format '{{status}} {{playerName}}' --follow)

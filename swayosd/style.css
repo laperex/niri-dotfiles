@@ -1,0 +1,20 @@
+/* ~/.config/swayosd/style.css */
+
+window {
+    min-width: 350px;        /* make the whole OSD wider */
+}
+
+/* progress bar track */
+progressbar {
+    min-width: 300px;
+}
+
+progressbar trough {
+    min-width: 300px;
+    min-height: 6px;
+}
+
+/* filled portion */
+progressbar progress {
+    min-height: 6px;
+}

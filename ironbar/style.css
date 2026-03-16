@@ -1,0 +1,27 @@
+/* 1. Make the entire main window completely transparent */
+.background {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* 2. Shrink-wrap your styling around the right-side modules */
+.end {
+    background-color: #282a36; /* Your preferred color */
+    border-radius: 12px;       /* The pill shape */
+    
+    /* Push the pill away from the physical screen edges */
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    
+    /* Inner spacing so the text doesn't touch the pill's edge */
+    padding: 4px 16px;         
+    border: 1px solid #44475a; 
+}
+
+/* Optional: Add some spacing between the individual widgets inside the pill */
+.end > * {
+    margin-left: 6px;
+    margin-right: 6px;
+}

@@ -1,0 +1,41 @@
+#!/bin/bash
+
+CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/spotify-notify"
+mkdir -p "$CACHE_DIR"
+
+NOTIFY_ID_FILE="/tmp/spotify-notify-id"
+NOTIFY_ID=69420
+
+playerctl --player=spotify metadata --format $'{{title}}\t{{artist}}\t{{album}}\t{{mpris:artUrl}}' --follow | \
+while IFS=$'\t' read -r title artist album art_url; do
+    [[ -z "$title" ]] && continue
+
+    art_url="${art_url// /}"
+
+    if [[ "$art_url" == file://* ]]; then
+        icon="${art_url#file://}"
+    elif [[ "$art_url" == http* ]]; then
+        url_hash="${art_url##*/}"
+        icon="$CACHE_DIR/$url_hash.jpg"
+        if [[ ! -f "$icon" ]]; then
+            curl -sL "$art_url" -o "$icon"
+        fi
+    else
+        icon="audio-x-generic"
+    fi
+
+    # Read previous notification ID (0 = no existing notification)
+    [[ -f "$NOTIFY_ID_FILE" ]] && NOTIFY_ID=$(< "$NOTIFY_ID_FILE")
+
+    # --replace-id reuses the same slot; notify-send prints the new ID
+    NEW_ID=$(notify-send \
+        --app-name="Spotify" \
+        --icon="$icon" \
+        --expire-time=4000 \
+        --replace-id="$NOTIFY_ID" \
+        --print-id \
+        "$title" \
+        "$artist${album:+ — $album}")
+
+    echo "$NEW_ID" > "$NOTIFY_ID_FILE"
+done

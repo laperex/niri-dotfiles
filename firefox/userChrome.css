@@ -1,0 +1,94 @@
+
+
+
+
+
+@import url(firefox-csshacks/chrome/page_action_buttons_on_hover.css);
+@import url(firefox-csshacks/chrome/window_control_placeholder_support.css);
+
+@import url(firefox-csshacks/chrome/tab_close_button_always_on_hover.css);
+@import url(firefox-csshacks/chrome/tab_loading_progress_throbber.css);
+@import url(firefox-csshacks/chrome/button_effect_scale_onclick.css);
+@import url(firefox-csshacks/chrome/blank_page_background.css);
+@import url(firefox-csshacks/chrome/autohide_menubar.css);
+@import url(firefox-csshacks/chrome/hide_toolbox_top_bottom_borders.css);
+@import url(firefox-csshacks/chrome/vertical_context_navigation.css);
+@import url(firefox-csshacks/chrome/minimal_popup_scrollbars.css);
+@import url(firefox-csshacks/chrome/button_effect_icon_glow.css);
+@import url(firefox-csshacks/chrome/dark_context_menus.css);
+@import url(firefox-csshacks/chrome/dark_additional_windows.css);
+@import url(firefox-csshacks/chrome/dark_checkboxes_and_radios.css);
+@import url(firefox-csshacks/chrome/minimal_text_fields.css);
+@import url(firefox-csshacks/chrome/minimal_toolbarbuttons.css);
+@import url(firefox-csshacks/chrome/urlbar_centered_text.css);
+
+@import url(firefox-csshacks/chrome/navbar_tabs_oneliner_tabs_on_left.css);
+
+* {
+    border-radius: 0 !important;
+	
+    /* _PRIMARY_BEGIN */
+
+    --toolbar-field-focus-border-color: #B4BEFE !important;
+    --lwt-toolbar-field-highlight: #B4BEFE !important;
+    --lwt-background-tab-separator-color: #B4BEFE !important;
+    --sidebar-border-color: #B4BEFE !important;
+    --toolbarbutton-icon-fill: #B4BEFE !important;
+    --lwt-toolbarbutton-icon-fill-attention: #B4BEFE !important;
+    --toolbarseparator-color: #B4BEFE !important;
+    --lwt-tab-line-color: #B4BEFE !important;
+    --panel-border-color: #B4BEFE !important;
+    --arrowpanel-border-color: #B4BEFE !important;
+
+    /* _PRIMARY_END */
+}
+
+#alltabs-button,
+.titlebar-spacer {
+	width: 0px !important;
+	display: none !important;
+}
+
+#urlbar-input::placeholder, .searchbar-textbox::placeholder {
+	opacity: 0 !important;
+}
+
+/* .ctrlTab-canvas {
+	background-color: rgba(0, 0, 0, 0) !important;
+} */
+
+.ctrlTab-preview:focus > .ctrlTab-preview-inner, #ctrlTab-showAll:focus {
+	/* background-color: rgba(0,0,0,.75); */
+	
+	/* border-color: --panel-border-color !important; */
+	border-top-color: var(--panel-border-color) !important;
+	border-right-color: var(--panel-border-color) !important;
+	border-bottom-color: var(--panel-border-color) !important;
+	border-left-color: var(--panel-border-color) !important;
+}
+
+/* #ctrlTab-panel { */
+	/* --panel-background: rgba(0, 0, 0, 1) !important; */
+	/* --panel-color: white; */
+	/* --panel-border-color: rgba(0, 0, 0, 0) !important; */
+	/* --panel-padding: 20px 10px 10px; */
+/* } */
+
+/* #urlbar-input {
+	
+} */
+/* 
+#ctrlTab-panel {
+    --panel-background: rgba(0, 0, 0, 0) !important;
+    --panel-shadow-margin: rgba(0, 0, 0, 0) !important;
+}
+
+#ctrlTab-showAll {
+    opacity: 0 !important;
+}
+
+#fullscr-toggler {
+    display: none !important;
+}
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); */

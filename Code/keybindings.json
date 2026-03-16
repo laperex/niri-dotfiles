@@ -1,0 +1,162 @@
+// Place your key bindings in this file to override the defaults
+[
+	{
+		"key": "ctrl+shift+l",
+		"command": "settings.cycle.lineNumbers",
+		"when": "editorFocus"
+	},
+	{
+		"key": "ctrl+i",
+		"command": "workbench.action.closePanel"
+	},
+	{
+		"key": "ctrl+n",
+		"command": "explorer.newFile"
+	},
+	{
+		"key": "ctrl+shift+k ctrl+o",
+		"command": "workbench.action.files.openFolder",
+		"when": "openFolderWorkspaceSupport"
+	},
+	{
+		"key": "ctrl+k ctrl+o",
+		"command": "-workbench.action.files.openFolder",
+		"when": "openFolderWorkspaceSupport"
+	},
+	{
+		"key": "ctrl+shift+k ctrl+r",
+		"command": "workbench.action.openRecent"
+	},
+	{
+		"key": "ctrl+r",
+		"command": "-workbench.action.openRecent"
+	},
+	{
+		"key": "ctrl+shift+k ctrl+n",
+		"command": "explorer.newFolder"
+	},
+	{
+		"key": "ctrl+shift+v",
+		"command": "-markdown.showPreview",
+		"when": "!notebookEditorFocused && editorLangId == 'markdown'"
+	},
+	{
+		"key": "ctrl+shift+v",
+		"command": "-notebook.cell.pasteAbove",
+		"when": "notebookEditorFocused && !inputFocus"
+	},
+	{
+		"key": "ctrl+f7",
+		"command": "cmake.launchTarget",
+		"when": "cmake:enableFullFeatureSet && !cmake:hideDebugCommand && !inDebugMode"
+	},
+	{
+		"key": "shift+f5",
+		"command": "-cmake.launchTarget",
+		"when": "cmake:enableFullFeatureSet && !cmake:hideDebugCommand && !inDebugMode"
+	},
+	{
+		"key": "f7",
+		"command": "-cmake.build",
+		"when": "cmake:enableFullFeatureSet && !cmake:hideBuildCommand"
+	},
+	{
+		"key": "ctrl+f8",
+		"command": "workbench.action.debug.run",
+		"when": "debuggersAvailable && debugState != 'initializing'"
+	},
+	{
+		"key": "ctrl+f5",
+		"command": "-workbench.action.debug.run",
+		"when": "debuggersAvailable && debugState != 'initializing'"
+	},
+	{
+		"key": "f11",
+		"command": "-workbench.action.toggleFullScreen",
+		"when": "!isIOS"
+	},
+	{
+		"key": "ctrl+shift+k ctrl+a",
+		"command": "workbench.action.toggleActivityBarVisibility"
+	},
+	{
+		"key": "ctrl+shift+k ctrl+v",
+		"command": "workbench.action.toggleStatusbarVisibility"
+	},
+	{
+		"key": "ctrl+f6",
+		"command": "verilog.run"
+	},
+	{
+		"key": "ctrl+shift+k ctrl+[",
+		"command": "notebook.fold",
+		"when": "notebookEditorFocused && !inputFocus && activeEditor == 'workbench.editor.notebook'"
+	},
+	{
+		"key": "ctrl+shift+[",
+		"command": "-notebook.fold",
+		"when": "notebookEditorFocused && !inputFocus && activeEditor == 'workbench.editor.notebook'"
+	},
+	{
+		"key": "f11",
+		"command": "editor.action.referenceSearch.trigger"
+	},
+	{
+		"key": "shift+f7",
+		"command": "-cmake.buildWithTarget",
+		"when": "cmake:enableFullFeatureSet && !cmake:hideBuildCommand"
+	},
+	{
+		"key": "shift+f7",
+		"command": "cmake.build"
+	},
+	{
+		"key": "ctrl+shift+k ctrl+t",
+		"command": "settings.cycle.tabVisibility"
+	},
+	{
+		"key": "ctrl+shift+k ctrl+m",
+		"command": "workbench.view.extension.vscode-serial-monitor-tools"
+	},
+	{
+		"key": "ctrl+shift+k ctrl+i",
+		"command": "systemverilog.auto_instantiate"
+	},
+	{
+        "key": "ctrl+alt+f",  // Change this shortcut if needed
+        "command": "workbench.action.tasks.runTask",
+		// "runCommands": [
+		// 	"editor.action.formatDocument"
+		// ],
+        "args": "Format Verilog File"
+	},
+	{
+		"key": "ctrl+shift+k ctrl+l",
+		"command": "timeline.removeView",
+		"when": "timeline.visible"
+	},
+	{
+		"key": "ctrl+shift+k ctrl+l",
+		"command": "outline.removeView",
+		"when": "outline.visible"
+	},
+	{
+		"key": "ctrl+shift+;",
+		"command": "-breadcrumbs.focus",
+		"when": "breadcrumbsPossible && breadcrumbsVisible"
+	},
+	{
+		"key": "ctrl+shift+;",
+		"command": "workbench.action.debug.restart",
+		"when": "inDebugMode"
+	},
+	{
+		"key": "ctrl+shift+f5",
+		"command": "-workbench.action.debug.restart",
+		"when": "inDebugMode"
+	},
+	{
+		"key": "ctrl+f8",
+		"command": "cmake.ctest"
+	}
+]

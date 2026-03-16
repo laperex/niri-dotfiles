@@ -1,0 +1,713 @@
+@import url("/usr/share/themes/Breeze-Dark/gtk-4.0/gtk.css");
+
+/* ============================================================
+   Catppuccin Mocha + Kvantum-matched — GTK 4 Breeze override
+   Drop in ~/.config/gtk-4.0/gtk.css
+   The base Breeze GTK4 rules are preserved below.
+   Color tokens, transparency, and border-radius are overridden
+   at the top (defines) and bottom (widget rules) of this file.
+   ============================================================ */
+
+/* ── Catppuccin Mocha palette ──────────────────────────────── */
+@define-color ctp_rosewater  #f5e0dc;
+@define-color ctp_flamingo   #f2cdcd;
+@define-color ctp_pink       #f5c2e7;
+@define-color ctp_mauve      #cba6f7;
+@define-color ctp_red        #f38ba8;
+@define-color ctp_maroon     #eba0ac;
+@define-color ctp_peach      #fab387;
+@define-color ctp_yellow     #f9e2af;
+@define-color ctp_green      #a6e3a1;
+@define-color ctp_teal       #94e2d5;
+@define-color ctp_sky        #89dceb;
+@define-color ctp_sapphire   #74c7ec;
+@define-color ctp_blue       #89b4fa;
+@define-color ctp_lavender   #b4befe;
+@define-color ctp_text       #cdd6f4;
+@define-color ctp_subtext1   #bac2de;
+@define-color ctp_subtext0   #a6adc8;
+@define-color ctp_overlay2   #9399b2;
+@define-color ctp_overlay1   #7f849c;
+@define-color ctp_overlay0   #6c7086;
+@define-color ctp_surface2   #585b70;
+@define-color ctp_surface1   #45475a;
+@define-color ctp_surface0   #313244;
+@define-color ctp_base       #1e1e2e;
+@define-color ctp_mantle     #181825;
+@define-color ctp_crust      #11111b;
+
+/* ── Kvantum-matched tokens ────────────────────────────────── */
+@define-color kv_window    #000000;
+@define-color kv_button    #090b10;
+@define-color kv_highlight #b4befe;
+@define-color kv_hl_text   #000000;
+@define-color kv_border    #45475a;
+
+/* ── Breeze GTK4 @define-color overrides ───────────────────── */
+
+@define-color theme_fg_color_breeze          @ctp_text;
+@define-color theme_text_color_breeze        @ctp_text;
+@define-color theme_bg_color_breeze          @kv_window;
+@define-color theme_base_color_breeze        @kv_window;
+@define-color theme_view_hover_decoration_color_breeze @kv_highlight;
+@define-color theme_hovering_selected_bg_color_breeze  @kv_highlight;
+@define-color theme_selected_bg_color_breeze           @kv_highlight;
+@define-color theme_selected_fg_color_breeze           @kv_hl_text;
+@define-color theme_view_active_decoration_color_breeze @kv_highlight;
+@define-color insensitive_selected_bg_color_breeze rgba(180, 190, 254, 0.35);
+@define-color insensitive_bg_color_breeze    @kv_button;
+@define-color insensitive_fg_color_breeze    rgba(88, 91, 112, 0.8);
+@define-color insensitive_base_color_breeze  rgba(88, 91, 112, 0.35);
+@define-color insensitive_base_fg_color_breeze @ctp_surface2;
+@define-color insensitive_selected_fg_color_breeze rgba(205, 214, 244, 0.35);
+@define-color theme_unfocused_fg_color_breeze    @ctp_text;
+@define-color theme_unfocused_text_color_breeze  @ctp_text;
+@define-color theme_unfocused_bg_color_breeze    @kv_window;
+@define-color theme_unfocused_base_color_breeze  @kv_window;
+@define-color theme_unfocused_selected_bg_color_alt_breeze @kv_highlight;
+@define-color theme_unfocused_selected_bg_color_breeze rgba(180, 190, 254, 0.5);
+@define-color theme_unfocused_selected_fg_color_breeze @kv_hl_text;
+@define-color insensitive_unfocused_selected_bg_color_breeze rgba(180, 190, 254, 0.35);
+@define-color insensitive_unfocused_fg_color_breeze rgba(88, 91, 112, 0.8);
+@define-color insensitive_unfocused_bg_color_breeze @kv_button;
+@define-color insensitive_unfocused_selected_fg_color_breeze rgba(205, 214, 244, 0.35);
+@define-color theme_unfocused_view_text_color_breeze rgba(205, 214, 244, 0.35);
+@define-color theme_unfocused_view_bg_color_breeze @kv_window;
+@define-color borders_breeze           @kv_border;
+@define-color unfocused_borders_breeze @kv_border;
+@define-color insensitive_borders_breeze rgba(69, 71, 90, 0.35);
+@define-color unfocused_insensitive_borders_breeze rgba(69, 71, 90, 0.35);
+
+@define-color theme_button_background_normal_breeze @kv_button;
+@define-color theme_button_decoration_hover_breeze  @kv_highlight;
+@define-color theme_button_decoration_focus_breeze  @ctp_lavender;
+@define-color theme_button_foreground_normal_breeze @ctp_text;
+@define-color theme_button_foreground_active_breeze @kv_hl_text;
+@define-color theme_button_background_insensitive_breeze        rgba(9, 11, 16, 0.35);
+@define-color theme_button_decoration_hover_insensitive_breeze  rgba(180, 190, 254, 0.35);
+@define-color theme_button_decoration_focus_insensitive_breeze  rgba(180, 190, 254, 0.35);
+@define-color theme_button_foreground_insensitive_breeze        rgba(205, 214, 244, 0.35);
+@define-color theme_button_foreground_active_insensitive_breeze rgba(205, 214, 244, 0.35);
+@define-color theme_button_background_backdrop_breeze        @kv_button;
+@define-color theme_button_decoration_hover_backdrop_breeze  @kv_highlight;
+@define-color theme_button_decoration_focus_backdrop_breeze  @ctp_lavender;
+@define-color theme_button_foreground_backdrop_breeze        @ctp_subtext1;
+@define-color theme_button_foreground_active_backdrop_breeze @ctp_subtext1;
+@define-color theme_button_background_backdrop_insensitive_breeze        rgba(9, 11, 16, 0.35);
+@define-color theme_button_decoration_hover_backdrop_insensitive_breeze  rgba(180, 190, 254, 0.35);
+@define-color theme_button_decoration_focus_backdrop_insensitive_breeze  rgba(180, 190, 254, 0.35);
+@define-color theme_button_foreground_backdrop_insensitive_breeze        rgba(205, 214, 244, 0.35);
+@define-color theme_button_foreground_active_backdrop_insensitive_breeze rgba(205, 214, 244, 0.35);
+
+@define-color warning_color_breeze  @ctp_yellow;
+@define-color error_color_breeze    @ctp_red;
+@define-color success_color_breeze  @ctp_green;
+@define-color warning_color_backdrop_breeze @ctp_yellow;
+@define-color error_color_backdrop_breeze   @ctp_red;
+@define-color success_color_backdrop_breeze @ctp_green;
+@define-color warning_color_insensitive_breeze rgba(249, 226, 175, 0.35);
+@define-color error_color_insensitive_breeze   rgba(243, 139, 168, 0.35);
+@define-color success_color_insensitive_breeze rgba(166, 227, 161, 0.35);
+@define-color warning_color_insensitive_backdrop_breeze rgba(249, 226, 175, 0.35);
+@define-color error_color_insensitive_backdrop_breeze   rgba(243, 139, 168, 0.35);
+@define-color success_color_insensitive_backdrop_breeze rgba(166, 227, 161, 0.35);
+
+/* link.color / link.visited.color from kvantum config */
+@define-color link_color_breeze         @ctp_rosewater;
+@define-color link_visited_color_breeze @ctp_blue;
+
+@define-color theme_titlebar_background_breeze          @kv_window;
+@define-color theme_titlebar_foreground_breeze          @ctp_text;
+@define-color theme_titlebar_background_light_breeze    @kv_window;
+@define-color theme_titlebar_foreground_backdrop_breeze @ctp_overlay1;
+@define-color theme_titlebar_background_backdrop_breeze @kv_window;
+@define-color theme_titlebar_foreground_insensitive_breeze rgba(205, 214, 244, 0.35);
+@define-color theme_titlebar_foreground_insensitive_backdrop_breeze rgba(127, 132, 156, 0.35);
+
+@define-color tooltip_text_breeze       @ctp_text;
+@define-color tooltip_background_breeze @kv_button;
+@define-color tooltip_border_breeze     @kv_border;
+@define-color print_paper_backdrop_breeze white;
+@define-color content_view_bg_breeze    @kv_window;
+
+/* GTK API re-defs */
+@define-color theme_fg_color            @ctp_text;
+@define-color theme_text_color          @ctp_text;
+@define-color theme_bg_color            @kv_window;
+@define-color theme_base_color          @kv_window;
+@define-color theme_selected_bg_color   @kv_highlight;
+@define-color theme_selected_fg_color   @kv_hl_text;
+@define-color insensitive_bg_color      @kv_button;
+@define-color insensitive_fg_color      rgba(88, 91, 112, 0.8);
+@define-color insensitive_base_color    rgba(88, 91, 112, 0.35);
+@define-color theme_unfocused_fg_color    @ctp_text;
+@define-color theme_unfocused_text_color  @ctp_text;
+@define-color theme_unfocused_bg_color    @kv_window;
+@define-color theme_unfocused_base_color  @kv_window;
+@define-color theme_unfocused_selected_bg_color rgba(180, 190, 254, 0.5);
+@define-color theme_unfocused_selected_fg_color @kv_hl_text;
+@define-color borders                   @kv_border;
+@define-color unfocused_borders         @kv_border;
+@define-color warning_color             @ctp_yellow;
+@define-color error_color               @ctp_red;
+@define-color success_color             @ctp_green;
+@define-color content_view_bg           @kv_window;
+@define-color text_view_bg              @kv_window;
+
+/* ═══════════════════════════════════════════════════════════
+   BASE BREEZE GTK4 RULES (structure preserved, colors remapped
+   via @define-color above)
+   ═══════════════════════════════════════════════════════════ */
+*, button:link,
+button:visited {
+  padding: 0;
+  outline-width: 0px; }
+
+/***************
+ * Base States *
+ ***************/
+.background {
+  color: @theme_fg_color_breeze;
+  background-color: @theme_bg_color_breeze; }
+  .background:backdrop, label:backdrop selection.background {
+    text-shadow: none;
+    -gtk-icon-shadow: none;
+    color: @theme_unfocused_fg_color_breeze;
+    background-color: @theme_unfocused_bg_color_breeze; }
+
+.gtkstyle-fallback {
+  background-color: @theme_bg_color_breeze;
+  color: @theme_fg_color_breeze; }
+  .gtkstyle-fallback:hover {
+    background-color: shade(@theme_bg_color_breeze,1.1);
+    color: @theme_fg_color_breeze; }
+  .gtkstyle-fallback:active {
+    background-color: shade(@theme_bg_color_breeze,0.9);
+    color: @theme_fg_color_breeze; }
+  .gtkstyle-fallback:disabled, label:disabled selection.gtkstyle-fallback {
+    background-color: @insensitive_fg_color_breeze;
+    color: @insensitive_fg_color_breeze; }
+  .gtkstyle-fallback:selected {
+    background-color: @theme_selected_bg_color_breeze;
+    color: @theme_selected_fg_color_breeze; }
+
+.view text, textview text, .view {
+  color: @theme_text_color_breeze;
+  background-color: @theme_base_color_breeze; }
+  .view text:backdrop, textview text:backdrop, .view:backdrop, label:backdrop selection.view {
+    color: @theme_unfocused_text_color_breeze;
+    background-color: @theme_unfocused_base_color_breeze; }
+  .view text:disabled, textview text:disabled, .view:disabled, label:disabled selection.view {
+    color: @insensitive_base_fg_color_breeze; }
+
+label selection {
+  background-color: @theme_selected_bg_color_breeze;
+  color: @theme_selected_fg_color_breeze; }
+label:disabled { color: @insensitive_fg_color_breeze; }
+label:backdrop { color: @theme_unfocused_text_color_breeze; }
+
+.app-notification, .app-notification.frame, .osd {
+  color: @theme_fg_color_breeze;
+  border: 1px solid @borders_breeze;
+  background-color: alpha(@theme_bg_color_breeze,0.8);
+  background-clip: padding-box;
+  box-shadow: none;
+  text-shadow: none;
+  -gtk-icon-shadow: none; }
+
+row:selected, .view:selected, .view text:selected,
+textview text:selected, flowbox flowboxchild:selected,
+.sidebar row:selected, entry selection, spinbutton text selection {
+  background-color: @theme_selected_bg_color_breeze;
+  color: @theme_selected_fg_color_breeze; }
+
+row:selected:backdrop, .sidebar row:selected:backdrop,
+entry selection:backdrop, spinbutton text selection:backdrop {
+  background-color: @theme_unfocused_selected_bg_color_breeze;
+  color: @theme_unfocused_base_color_breeze; }
+
+/***********
+ * Buttons *
+ ***********/
+button {
+  border: 1px solid;
+  border-radius: 1.25mm;
+  padding: 6px 6px;
+  background-clip: border-box;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.125);
+  text-shadow: none;
+  -gtk-icon-shadow: none;
+  color: @theme_button_foreground_normal_breeze;
+  border-color: @borders_breeze;
+  background: @theme_button_background_normal_breeze; }
+  button.suggested-action {
+    background-color: alpha(@theme_button_decoration_focus_breeze,0.2);
+    border-color: mix(@theme_button_decoration_focus_breeze,mix(@theme_button_background_normal_breeze,@theme_button_foreground_normal_breeze,0.333),0.5); }
+  button.destructive-action {
+    background-color: alpha(@error_color_breeze,0.2);
+    border-color: mix(@error_color_breeze,mix(@theme_button_background_normal_breeze,@theme_button_foreground_normal_breeze,0.333),0.5); }
+  button:backdrop { box-shadow: none; background: @theme_button_background_normal_breeze; }
+  button:checked { background: alpha(@theme_button_foreground_normal_breeze,0.125); box-shadow: none; }
+  button:hover { border-color: @theme_button_decoration_hover_breeze; }
+  button:hover:not(:checked):not(:active) { background: @theme_button_background_normal_breeze; }
+  button:active { box-shadow: none; background: alpha(@theme_button_decoration_hover_breeze,0.333); }
+  button:focus { border-color: @theme_button_decoration_focus_breeze; }
+  button:disabled {
+    box-shadow: none;
+    color: @theme_button_foreground_insensitive_breeze;
+    border-color: @insensitive_borders_breeze;
+    background: @theme_button_background_insensitive_breeze; }
+  button.flat {
+    border-color: transparent; background: transparent;
+    background-color: transparent; background-image: none;
+    box-shadow: none; color: @theme_button_foreground_normal_breeze; }
+  button.flat:hover { border-color: @theme_button_decoration_hover_breeze; }
+  button.flat:active { border-color: @theme_button_decoration_hover_breeze; background-color: alpha(@theme_button_decoration_hover_breeze,0.333); }
+  button.circular { min-width: 18px; min-height: 18px; border-radius: 9999px; }
+
+/****************
+ * Text Entries *
+ ****************/
+entry, spinbutton text, spinbutton:not(.vertical) {
+  min-height: 30px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border: 1px solid;
+  border-radius: 1.25mm;
+  color: @theme_text_color_breeze;
+  border-color: @borders_breeze;
+  background-color: @theme_base_color_breeze;
+  box-shadow: none; }
+  entry:focus, spinbutton text:focus { border-color: @theme_view_active_decoration_color_breeze; }
+  entry:disabled { color: @insensitive_base_fg_color_breeze; border-color: @insensitive_borders_breeze; background-color: @insensitive_base_color_breeze; }
+  entry:backdrop { color: @theme_unfocused_text_color_breeze; border-color: @unfocused_borders_breeze; background-color: @theme_unfocused_base_color_breeze; }
+  entry.error { color: @error_color_breeze; border-color: @error_color_breeze; background-color: alpha(@error_color_breeze,0.5); }
+  entry.warning { color: @warning_color_breeze; border-color: @warning_color_breeze; background-color: alpha(@warning_color_breeze,0.5); }
+
+/*************************
+ * Check and Radio items *
+ *************************/
+check, radio {
+  margin: 0 4px;
+  min-height: 14px;
+  min-width: 14px;
+  background-color: @theme_button_background_normal_breeze;
+  border: 1px solid alpha(@theme_button_foreground_normal_breeze,0.33); }
+  check:hover, radio:hover { border: 1px solid @theme_button_decoration_hover_breeze; }
+  check:disabled, radio:disabled { background-color: @insensitive_base_color_breeze; border-color: alpha(@insensitive_base_fg_color_breeze,0.33); }
+  check:focus, radio:focus { border-color: @theme_button_decoration_focus_breeze; }
+  check:indeterminate, check:checked,
+  radio:indeterminate, radio:checked {
+    border-color: @theme_button_decoration_hover_breeze;
+    background-color: alpha(@theme_button_decoration_hover_breeze,0.33); }
+
+check { border-radius: 1.25mm; }
+radio { border-radius: 50%; }
+
+/*****************
+ * Color Chooser *
+ *****************/
+colorswatch overlay { border: 1px solid @borders_breeze; }
+colorswatch overlay:hover { border-color: @theme_button_decoration_hover_breeze; }
+
+/***********
+ * Dialogs *
+ ***********/
+messagedialog.background { background-color: @theme_bg_color_breeze; }
+messagedialog:backdrop { background-color: @theme_unfocused_bg_color_breeze; }
+messagedialog .titlebar {
+  min-height: 32px;
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, shade(@theme_titlebar_background_breeze,1.2117647), @theme_titlebar_background_breeze);
+  box-shadow: none; }
+
+filechooser .search-bar { background-color: @theme_bg_color_breeze; border-color: @theme_bg_color_breeze; box-shadow: none; }
+filechooser .dialog-action-box { border-top: 1px solid @borders_breeze; }
+filechooser #pathbarbox { background-color: @theme_bg_color_breeze; border-bottom: 1px solid @borders_breeze; }
+
+/***************
+ * Header bars *
+ ***************/
+headerbar {
+  padding: 0px 6px;
+  border-width: 0px 0px 1px 0px;
+  border-radius: 6px 6px 0px 0px;
+  border-style: solid;
+  border-color: @borders_breeze;
+  color: @theme_titlebar_foreground_breeze;
+  background-image: none;
+  background-color: @theme_titlebar_background_breeze;
+  border-top: 1px solid lighter(@theme_titlebar_background_breeze); }
+  headerbar:backdrop {
+    background-image: none;
+    background-color: @theme_titlebar_background_backdrop_breeze;
+    color: @theme_titlebar_foreground_backdrop_breeze;
+    box-shadow: none; }
+  headerbar button {
+    border-color: transparent; background: transparent;
+    background-color: transparent; background-image: none;
+    box-shadow: none; color: @theme_titlebar_foreground_breeze; }
+  headerbar button:hover { border-color: @theme_button_decoration_hover_breeze; color: @theme_titlebar_foreground_breeze; }
+  headerbar button:active { border-color: @theme_button_decoration_hover_breeze; background-color: alpha(@theme_button_decoration_hover_breeze,0.333); }
+  headerbar button:focus { border-color: @theme_button_decoration_focus_breeze; }
+  headerbar button:disabled { background-color: transparent; background-image: none; border-color: transparent; color: @theme_titlebar_foreground_insensitive_breeze; }
+  headerbar .title { font-weight: normal; padding: 0px 12px; }
+  headerbar .subtitle { font-size: smaller; padding: 0 12px; }
+  headerbar separator { border-width: 0px; background-color: transparent; background-image: none; border-color: transparent; }
+  headerbar entry, headerbar spinbutton, headerbar separator, headerbar button { margin-top: 8px; margin-bottom: 8px; }
+  .tiled headerbar, .maximized headerbar { border-radius: 0; }
+
+/**********
+ * Frames *
+ **********/
+frame > border, .frame {
+  box-shadow: none; margin: 0; padding: 0; border-radius: 0;
+  border: 1px solid @borders_breeze; }
+  frame > border.flat, .frame.flat { border-style: none; }
+  frame > border:backdrop, .frame:backdrop { border-color: @unfocused_borders_breeze; }
+
+actionbar > revealer > box {
+  padding: 6px;
+  border-top: 1px solid @borders_breeze; }
+
+separator { background: @borders_breeze; min-width: 1px; min-height: 1px; }
+
+/*************
+ * Expanders *
+ *************/
+expander {
+  min-width: 16px; min-height: 16px;
+  -gtk-icon-source: -gtk-icontheme("go-next-symbolic"); }
+  expander:dir(rtl) { -gtk-icon-source: -gtk-icontheme("go-next-rtl-symbolic"); }
+  expander:hover { color: shade(@theme_button_decoration_focus_breeze,1.3); }
+  expander:checked { -gtk-icon-source: -gtk-icontheme("go-down-symbolic"); }
+
+/*********************
+ * Spinner Animation *
+ *********************/
+@keyframes spin { to { -gtk-icon-transform: rotate(1turn); } }
+spinner { background-image: none; opacity: 0; -gtk-icon-source: -gtk-icontheme("process-working-symbolic"); }
+spinner:checked { opacity: 1; animation: spin 1s linear infinite; }
+
+/*************
+ * Notebooks *
+ *************/
+notebook.frame { border: none; padding: 0px; box-shadow: inset 0px 0px 0px 1px @borders_breeze; }
+notebook > header { padding: 0px; border: none; background-color: @theme_bg_color_breeze; }
+  notebook > header.top { box-shadow: inset 0 -1px @borders_breeze; }
+  notebook > header.bottom { box-shadow: inset 0 1px @borders_breeze; }
+  notebook > header.right { box-shadow: inset 1px 0 @borders_breeze; }
+  notebook > header.left { box-shadow: inset -1px 0 @borders_breeze; }
+  notebook > header:backdrop { background-color: @theme_unfocused_bg_color_breeze; }
+  notebook > header.top > tabs > tab {
+    padding: 4px 6px; padding-bottom: 7px;
+    border: 1px solid transparent; border-bottom: none; border-top: 3px solid transparent;
+    background-color: alpha(@theme_fg_color_breeze,0.2); border-radius: 0; }
+  notebook > header.top > tabs > tab:hover { background-color: alpha(@theme_selected_bg_color_breeze,0.2); }
+  notebook > header.top > tabs > tab:checked {
+    transition: none; border-color: @borders_breeze;
+    border-top-color: @theme_selected_bg_color_breeze;
+    border-radius: 0; background-color: @theme_bg_color_breeze; }
+  notebook > header > tabs > arrow {
+    border-color: transparent; background: transparent;
+    background-color: transparent; background-image: none;
+    box-shadow: none; color: @theme_button_foreground_normal_breeze;
+    min-height: 16px; min-width: 16px; border-radius: 0; }
+  notebook > header button.flat {
+    padding: 0; margin: 2px; min-width: 12px; min-height: 12px;
+    border: 0px solid; border-radius: 50%; color: @borders_breeze; }
+    notebook > header button.flat:active, notebook > header button.flat:hover { color: @ctp_red; }
+notebook > stack:not(:only-child) { background-color: transparent; border-style: solid; border-color: @borders_breeze; border-width: 0px; }
+
+/************
+ * Pathbars *
+ ************/
+.path-bar { background-color: @theme_bg_color_breeze; border-bottom: 1px solid @borders_breeze; }
+.path-bar button {
+  color: @theme_button_foreground_normal_breeze; border-color: @borders_breeze;
+  background: @theme_button_background_normal_breeze; padding: 4px 8px; color: @theme_fg_color_breeze; }
+  .path-bar button:hover { border-color: @theme_button_decoration_hover_breeze; }
+  .path-bar button:active, .path-bar button:checked { background-color: @borders_breeze; }
+
+/*****************
+ * Progress bars *
+ *****************/
+progressbar trough {
+  border: 1px solid; border-radius: 1.25mm;
+  background: linear-gradient(alpha(@theme_button_foreground_normal_breeze,0.1),alpha(@theme_button_foreground_normal_breeze,0.1)), linear-gradient(@theme_bg_color_breeze,@theme_bg_color_breeze);
+  border-color: alpha(@theme_button_foreground_normal_breeze,0.2); }
+progressbar progress {
+  border: 1px solid; margin: -1px; border-radius: 1.25mm; box-shadow: none;
+  background: linear-gradient(alpha(@theme_button_decoration_hover_breeze,0.5),alpha(@theme_button_decoration_hover_breeze,0.5)), linear-gradient(@theme_bg_color_breeze,@theme_bg_color_breeze);
+  border-color: @theme_button_decoration_hover_breeze; }
+
+/*************
+ * Level Bar *
+ *************/
+levelbar trough {
+  border: 1px solid; padding: 2px; border-radius: 3px;
+  color: @theme_text_color_breeze; border-color: @borders_breeze;
+  background-color: @theme_base_color_breeze; box-shadow: none; }
+levelbar block:not(.empty) {
+  border: 1px solid @theme_button_decoration_hover_breeze;
+  background: linear-gradient(alpha(@theme_button_decoration_hover_breeze,0.5),alpha(@theme_button_decoration_hover_breeze,0.5)), linear-gradient(@theme_bg_color_breeze,@theme_bg_color_breeze);
+  box-shadow: none; border-radius: 1.25mm; }
+levelbar block.low { border-color: @warning_color_breeze; }
+levelbar block.full, levelbar block.high { border-color: @success_color_breeze; }
+
+/************
+ * GtkScale *
+ ************/
+scale { padding: 12px; }
+scale slider {
+  min-width: 16px; min-height: 16px; border-radius: 50%;
+  border: 1px solid mix(@theme_bg_color_breeze,@theme_button_foreground_normal_breeze,0.4);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.125);
+  background: @theme_button_background_normal_breeze; margin: -9px; }
+  scale slider:hover { border-color: @theme_button_decoration_hover_breeze; border-radius: 50%; }
+scale:focus-within slider { border-color: @theme_button_decoration_focus_breeze; border-radius: 50%; }
+scale trough {
+  min-width: 4px; min-height: 4px; border: 1px solid; border-radius: 1.25mm;
+  background: linear-gradient(alpha(@theme_button_foreground_normal_breeze,0.1),alpha(@theme_button_foreground_normal_breeze,0.1)), linear-gradient(@theme_bg_color_breeze,@theme_bg_color_breeze);
+  border-color: alpha(@theme_button_foreground_normal_breeze,0.2); }
+scale highlight {
+  margin: -1px; border-radius: 1.25mm;
+  background: linear-gradient(alpha(@theme_button_decoration_hover_breeze,0.5),alpha(@theme_button_decoration_hover_breeze,0.5)), linear-gradient(@theme_bg_color_breeze,@theme_bg_color_breeze);
+  border: 1px solid @theme_button_decoration_hover_breeze; }
+
+/**************
+ * Scrollbars *
+ **************/
+scrollbar { background-color: @theme_bg_color_breeze; border-color: @theme_bg_color_breeze; padding: 5px 0px; }
+  scrollbar.vertical:dir(ltr) { border-left: 1px solid @borders_breeze; }
+  scrollbar.horizontal { border-top: 1px solid @borders_breeze; padding: 0px 5px; }
+  scrollbar trough { margin: 0px 5px; min-width: 6px; min-height: 14px; background-color: transparent; }
+  scrollbar slider {
+    min-width: 6px; min-height: 30px; border-radius: 15px;
+    background-image: linear-gradient(alpha(@theme_button_foreground_normal_breeze,0.175),alpha(@theme_button_foreground_normal_breeze,0.175)), linear-gradient(@theme_bg_color_breeze,@theme_bg_color_breeze);
+    box-shadow: 0 0 0 1px alpha(@theme_button_foreground_normal_breeze,0.315) inset; }
+  scrollbar:hover trough slider:hover {
+    background-image: linear-gradient(alpha(@theme_button_decoration_hover_breeze,0.5),alpha(@theme_button_decoration_hover_breeze,0.5)), linear-gradient(@theme_bg_color_breeze,@theme_bg_color_breeze);
+    box-shadow: 0 0 0 1px alpha(@theme_button_decoration_hover_breeze,0.9) inset; }
+
+/***********
+ * Sidebar *
+ ***********/
+.sidebar { border-radius: 0px; border-style: none; background-color: @theme_base_color_breeze; }
+  .sidebar row.activatable:selected:backdrop { background-color: @theme_unfocused_selected_bg_color_alt_breeze; }
+separator.sidebar { background-color: @borders_breeze; }
+placessidebar row { min-height: 36px; padding: 0px; }
+  placessidebar row > revealer { padding: 0 14px; }
+  placessidebar row:selected { color: @theme_selected_fg_color_breeze; }
+  placessidebar row:disabled { color: @insensitive_fg_color_breeze; }
+
+/*****************
+ * GtkSpinButton *
+ *****************/
+spinbutton text { border-radius: 0px; }
+spinbutton.vertical button.up { border-radius: 3px 3px 0 0; border-style: solid solid none solid; }
+spinbutton.vertical button.down { border-radius: 0 0 3px 3px; border-style: none solid solid solid; }
+
+/**********
+ * Switch *
+ **********/
+switch {
+  margin: 2px; font-weight: bold; font-size: smaller;
+  border: 1px solid; border-radius: 12px; color: transparent;
+  background-color: alpha(@theme_button_foreground_normal_breeze,0.05);
+  border-color: alpha(@theme_button_foreground_normal_breeze,0.222); }
+  switch:checked { background: alpha(@theme_button_decoration_hover_breeze,0.333); border-color: @theme_button_decoration_hover_breeze; }
+  switch slider {
+    min-width: 24px; min-height: 24px; margin: -4px;
+    border: 1px solid; border-radius: 12px;
+    border-color: @borders_breeze; background: @theme_button_background_normal_breeze; }
+  switch:hover slider { border-color: @theme_button_decoration_hover_breeze; }
+  switch:focus slider { border-color: @theme_button_decoration_focus_breeze; }
+
+/************
+ * Toolbars *
+ ************/
+.toolbar, toolbar, searchbar > revealer > box, .inline-toolbar {
+  padding: 4px; background-color: @theme_bg_color_breeze; }
+.inline-toolbar { border-width: 0px 0px 1px 0px; padding: 3px; border-radius: 0; }
+searchbar > revealer > box { border-width: 0px 0px 1px 0px; padding: 3px; }
+.inline-toolbar, searchbar > revealer > box { border-style: solid; border-color: @borders_breeze; text-shadow: none; background-color: @theme_bg_color_breeze; }
+
+/************
+ * Tooltips *
+ ************/
+tooltip {
+  color: @tooltip_text_breeze; padding: 4px; border-radius: 1.25mm;
+  box-shadow: none; text-shadow: none; border: 1px solid @tooltip_border_breeze; }
+  tooltip.background { background-color: @tooltip_background_breeze; background-clip: padding-box; }
+
+/**************
+ * Tree Views *
+ **************/
+treeview.view { border-left-color: @borders_breeze; border-top-color: transparent; }
+  treeview.view:hover { background-color: alpha(@theme_selected_bg_color_breeze,0.3); }
+  treeview.view:selected { background-color: @theme_selected_bg_color_breeze; border-left-color: @theme_selected_fg_color_breeze; }
+  treeview.view header button { color: @theme_button_foreground_normal_breeze; background-color: @theme_button_background_normal_breeze; text-shadow: none; box-shadow: none; }
+  treeview.view header button:hover { background-color: alpha(@theme_button_decoration_hover_breeze,0.5); }
+
+/**********************
+ * Window Decorations *
+ *********************/
+dialog, window {
+  border-radius: 0 0 5px 5px; border-width: 0px;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.5), 0px 2px 8px rgba(0, 0, 0, 0.3); margin: 0px; }
+  dialog.csd, window.csd { border-radius: 5px; }
+  dialog.maximized, window.maximized { border-radius: 0; }
+  .tiled dialog, .tiled window, .maximized dialog, .maximized window, .fullscreen dialog, .fullscreen window { border-radius: 0; }
+
+.floating-bar {
+  background-color: @tooltip_background_breeze; color: @tooltip_text_breeze;
+  border: 1px solid @tooltip_border_breeze; border-radius: 1.25mm; margin: 3px; }
+
+/* ═══════════════════════════════════════════════════════════
+   TRANSPARENCY — mirrors reduce_window_opacity=10 (90%)
+   base.color=#00000000 → content views fully transparent
+   ═══════════════════════════════════════════════════════════ */
+
+/* window — same focused and unfocused */
+window, .background,
+window:backdrop, .background:backdrop {
+    background-color: rgba(0, 0, 0, 0.90);
+    color: @ctp_text;
+}
+
+/* content views — dark semi-transparent, matches pavucontrol depth */
+.view, textview, textview text, .view text,
+.view:backdrop, textview:backdrop,
+textview text:backdrop, .view text:backdrop {
+    background-color: rgba(0, 0, 0, 0.85);
+    color: @ctp_text;
+}
+
+/* list rows — dark semi-transparent matching content area */
+list, list row, list row:backdrop {
+    background-color: rgba(0, 0, 0, 0.85);
+    color: @ctp_text;
+}
+
+/* selection tint */
+list row:selected, list row:selected:focus,
+list row:selected:hover, list row:selected:backdrop,
+row:selected, row:selected:focus, row:selected:backdrop,
+.view:selected, .view:selected:focus, .view:selected:backdrop,
+treeview.view:selected, treeview.view:selected:focus,
+treeview.view:selected:backdrop,
+.sidebar row:selected, .sidebar row:selected:focus,
+.sidebar row:selected:backdrop {
+    background-color: @kv_highlight;
+    color: @kv_hl_text;
+}
+
+/* sidebar — very dark, same focused and unfocused */
+.sidebar, placessidebar, stacksidebar.sidebar,
+.sidebar:backdrop, placessidebar:backdrop {
+    background-color: rgba(0, 0, 0, 0.72);
+}
+
+/* headerbars — same focused and unfocused */
+headerbar, headerbar:backdrop {
+    background-color: rgba(9, 11, 16, 0.88);
+    background-image: none;
+    color: @ctp_text;
+}
+
+/* notebook tabs */
+notebook > header, notebook > header:backdrop {
+    background-color: rgba(9, 11, 16, 0.85);
+    border-color: @kv_border;
+}
+notebook > header > tabs > tab {
+    background-color: transparent;
+    color: @ctp_surface2;
+}
+notebook > header > tabs > tab:checked {
+    background-color: rgba(9, 11, 16, 0.70);
+    color: @ctp_text;
+}
+notebook > header > tabs > tab:hover:not(:checked) {
+    background-color: rgba(9, 11, 16, 0.45);
+    color: @ctp_subtext1;
+}
+
+/* popovers / menus */
+popover, popover.background { background-color: transparent; }
+popover contents, popover > arrow,
+popover.background contents, popover.background > arrow {
+    background-color: rgba(9, 11, 16, 0.92);
+    border-color: @kv_border;
+}
+
+/* toolbars */
+.toolbar, toolbar, searchbar > revealer > box, .inline-toolbar {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+/* scrollbars */
+scrollbar, scrollbar:backdrop {
+    background-color: rgba(0, 0, 0, 0.50);
+    border-color: rgba(0, 0, 0, 0.50);
+}
+
+/* tooltips */
+tooltip.background {
+    background-color: rgba(9, 11, 16, 0.94);
+}
+
+/* path bar */
+.path-bar, .path-bar:backdrop {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+/* disabled */
+*:disabled, label:disabled { color: @ctp_surface2; }
+
+/* ═══════════════════════════════════════════════════════════
+   BORDER RADIUS — squares stay square, circles stay round
+   ═══════════════════════════════════════════════════════════ */
+
+/* containers and boxes → 0 */
+window, .background,
+headerbar, .titlebar,
+.sidebar, placessidebar, stacksidebar.sidebar,
+notebook > header, notebook > header > tabs > tab,
+notebook > stack,
+frame, .frame,
+.view, textview,
+list, list row, row,
+.toolbar, toolbar,
+searchbar, searchbar > revealer > box,
+.inline-toolbar, actionbar,
+entry, spinbutton text, spinbutton:not(.vertical),
+button,
+progressbar trough, progressbar progress,
+levelbar trough, levelbar block,
+scale trough, scale highlight,
+treeview.view, treeview.view header button { border-radius: 0; }
+
+/* popover contents → 0 */
+popover contents,
+popover > arrow,
+popover.background contents,
+popover.background > arrow { border-radius: 0; }
+
+/* tooltip → 0 */
+tooltip { border-radius: 0; }
+
+/* scrollbar track → 0, handle → 2px (distinguishable from track) */
+scrollbar trough { border-radius: 0; }
+scrollbar slider { border-radius: 2px; }
+
+/* checkbox → 0 (square box, not rounded) */
+check { border-radius: 0; }
+
+/* TRUE circles — left untouched:
+   radio        → border-radius: 50%
+   switch        → border-radius: 12px (pill)
+   switch slider → border-radius: 12px
+   scale slider  → border-radius: 50%
+   button.circular → border-radius: 9999px         */

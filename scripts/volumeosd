@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+# ~/.local/bin/scripts/volume-osd
+# Usage: volume-osd raise|lower|mute
+
+ACTION="$1"
+
+# get current percentage before changing
+CUR=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{printf "%d", $2 * 100}')
+
+# dynamic step based on current level
+if [ "$PCT_INT" -lt 20 ]; then
+    STEP="1%"
+elif [ "$PCT_INT" -lt 40 ]; then
+    STEP="2%"
+elif [ "$PCT_INT" -lt 60 ]; then
+    STEP="3%"
+else
+    STEP="5%"
+fi
+
+case "$ACTION" in
+    raise) wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ "${STEP}+" ;;
+    lower) wpctl set-volume @DEFAULT_AUDIO_SINK@ "${STEP}-" ;;
+    mute)  wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle ;;
+esac
+
+# get updated volume after change
+RAW=$(wpctl get-volume @DEFAULT_AUDIO_SINK@)
+MUTED=$(echo "$RAW" | grep -c "MUTED")
+VOL=$(echo "$RAW" | awk '{printf "%.2f", $2}')
+PCT=$(echo "$RAW" | awk '{printf "%d%%", $2 * 100}')
+PROGRESS=$(echo "$RAW" | awk '{printf "%.4f", $2 / 1.5}')
+
+# pick icon based on level and mute state
+if [ "$MUTED" -gt 0 ] || (( $(echo "$VOL == 0" | bc -l) )); then
+    ICON="audio-volume-muted"
+elif (( $(echo "$VOL <= 0.33" | bc -l) )); then
+    ICON="audio-volume-low"
+elif (( $(echo "$VOL <= 0.66" | bc -l) )); then
+    ICON="audio-volume-medium"
+else
+    ICON="audio-volume-high"
+fi
+
+swayosd-client \
+    --custom-icon "$ICON" \
+    --custom-progress "$PROGRESS" \
+    --custom-progress-text "$PCT"

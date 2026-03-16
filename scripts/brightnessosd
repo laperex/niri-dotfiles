@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+# ~/.local/bin/scripts/brightness-osd
+# Usage: brightness-osd raise|lower
+
+ACTION="$1"
+
+# get current brightness percentage before changing
+CUR=$(brightnessctl --class=backlight get)
+MAX=$(brightnessctl --class=backlight max)
+PCT_INT=$(( CUR * 100 / MAX ))
+
+# dynamic step based on current level
+if [ "$PCT_INT" -lt 15 ]; then
+    STEP="1%"
+elif [ "$PCT_INT" -lt 40 ]; then
+    STEP="3%"
+else
+    STEP="5%"
+fi
+
+case "$ACTION" in
+    raise) brightnessctl --class=backlight set "${STEP}+" ;;
+    lower) brightnessctl --class=backlight set "${STEP}-" --min-val=1 ;;
+esac
+
+# get updated brightness after change
+CUR=$(brightnessctl --class=backlight get)
+PCT_INT=$(( CUR * 100 / MAX ))
+PCT="${PCT_INT}%"
+PROGRESS=$(echo "$CUR $MAX" | awk '{printf "%.4f", $1 / $2}')
+
+# pick icon based on level
+if [ "$PCT_INT" -eq 0 ]; then
+    ICON="display-brightness-off-symbolic"
+elif [ "$PCT_INT" -lt 33 ]; then
+    ICON="display-brightness-low-symbolic"
+elif [ "$PCT_INT" -lt 66 ]; then
+    ICON="display-brightness-medium-symbolic"
+else
+    ICON="display-brightness-high-symbolic"
+fi
+
+swayosd-client \
+    --custom-icon "$ICON" \
+    --custom-progress "$PROGRESS" \
+    --custom-progress-text "$PCT"
