@@ -1,15 +1,145 @@
-# This file is written by xdg-user-dirs-update
-# If you want to change or add directories, just edit the line you're
-# interested in. All local changes will be retained on the next run.
-# Format is XDG_xxx_DIR="$HOME/yyy", where yyy is a shell-escaped
-# homedir-relative path, or XDG_xxx_DIR="/yyy", where /yyy is an
-# absolute path. No other format is supported.
-# 
-XDG_DESKTOP_DIR="$HOME/Desktop"
-XDG_DOWNLOAD_DIR="$HOME/Downloads"
-XDG_TEMPLATES_DIR="$HOME/Templates"
-XDG_PUBLICSHARE_DIR="$HOME/Public"
-XDG_DOCUMENTS_DIR="$HOME/Documents"
-XDG_MUSIC_DIR="$HOME/Music"
-XDG_PICTURES_DIR="$HOME/Pictures"
-XDG_VIDEOS_DIR="$HOME/Videos"
+[ColorEffects:Disabled]
+ChangeSelectionColor=
+Color=112,111,110
+ColorAmount=0
+ColorEffect=0
+ContrastAmount=0.65
+ContrastEffect=1
+Enable=
+IntensityAmount=0.1
+IntensityEffect=0
+
+[ColorEffects:Inactive]
+ChangeSelectionColor=true
+Color=112,111,110
+ColorAmount=0.025
+ColorEffect=2
+ContrastAmount=0.1
+ContrastEffect=2
+Enable=true
+IntensityAmount=0
+IntensityEffect=0
+
+[Colors:Button]
+BackgroundAlternate=62,62,62
+BackgroundNormal=73,73,73
+DecorationFocus=170,170,170
+DecorationHover=150,150,150
+ForegroundActive=255,128,224
+ForegroundInactive=160,160,160
+ForegroundLink=46,184,230
+ForegroundNegative=240,1,1
+ForegroundNeutral=255,221,0
+ForegroundNormal=255,255,255
+ForegroundPositive=128,255,128
+ForegroundVisited=255,102,102
+
+[Colors:Selection]
+BackgroundAlternate=115,115,115
+BackgroundNormal=115,115,115
+DecorationFocus=170,170,170
+DecorationHover=150,150,150
+ForegroundActive=255,128,224
+ForegroundInactive=160,160,160
+ForegroundLink=46,184,230
+ForegroundNegative=240,1,1
+ForegroundNeutral=255,221,0
+ForegroundNormal=255,255,255
+ForegroundPositive=128,255,128
+ForegroundVisited=255,102,102
+
+[Colors:Tooltip]
+BackgroundAlternate=0,0,0
+BackgroundNormal=0,0,0
+DecorationFocus=170,170,170
+DecorationHover=150,150,150
+ForegroundActive=255,128,224
+ForegroundInactive=225,225,225
+ForegroundLink=46,184,230
+ForegroundNegative=240,1,1
+ForegroundNeutral=255,221,0
+ForegroundNormal=255,255,255
+ForegroundPositive=128,255,128
+ForegroundVisited=255,102,102
+
+[Colors:View]
+BackgroundAlternate=56,56,56
+BackgroundNormal=46,46,46
+DecorationFocus=170,170,170
+DecorationHover=150,150,150
+ForegroundActive=255,128,224
+ForegroundInactive=160,160,160
+ForegroundLink=46,184,230
+ForegroundNegative=240,1,1
+ForegroundNeutral=255,221,0
+ForegroundNormal=255,255,255
+ForegroundPositive=128,255,128
+ForegroundVisited=255,102,102
+
+[Colors:Window]
+BackgroundAlternate=49,49,49
+BackgroundNormal=61,61,62
+DecorationFocus=170,170,170
+DecorationHover=150,150,150
+ForegroundActive=255,128,224
+ForegroundInactive=160,160,160
+ForegroundLink=46,184,230
+ForegroundNegative=240,1,1
+ForegroundNeutral=255,221,0
+ForegroundNormal=255,255,255
+ForegroundPositive=128,255,128
+ForegroundVisited=255,102,102
+
+[DirSelect Dialog]
+DirSelectDialog Size=1020,560
+History Items[$e]=file:$HOME/.temp/kvantum_2/themes/catppuccin-mocha-sapphire/,file:$HOME/.temp/kvantum_2/themes/catppuccin-mocha-rosewater/,file:$HOME/.temp/kvantum_2/themes/,file:$HOME/.temp/,file:$HOME/,file:///home/.temp/,file:///run/media/laperex/Expansion,file:$HOME/Downloads,file:///run/media/laperex/NTFS_DATA,file:///run/media/laperex/E402-7FD8,file:$HOME/Downloads,file:$HOME/.config/Kvantum/.bak/kvantum/themes/catppuccin-mocha-lavender,file:$HOME/.temp
+Splitter State=\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00\xc8\x00\x00\x034\x00\xff\xff\xff\xff\x01\x00\x00\x00\x01\x00
+
+[General]
+ColorSchemeHash=d6c2df0966578859e7aa68d5591d7e3f0cfa19bc
+TerminalApplication=alacritty
+TerminalService=Alacritty.desktop
+
+[Icons]
+Theme=breeze-dark
+
+[KDE]
+ShowDeleteCommand=false
+ShowIconsInMenuItems=true
+ShowIconsOnPushButtons=true
+widgetStyle=qt6ct-style
+
+[KFileDialog Settings]
+Allow Expansion=false
+Automatically select filename extension=true
+Breadcrumb Navigation=true
+Decoration position=2
+Show Full Path=false
+Show Inline Previews=true
+Show Preview=false
+Show Speedbar=true
+Show hidden files=false
+Sort by=Name
+Sort directories first=true
+Sort hidden files last=false
+Sort reversed=false
+Speedbar Width=200
+View Style=DetailTree
+
+[KShortcutsDialog Settings]
+Dialog Size=600,480
+
+[PreviewSettings]
+EnableRemoteFolderThumbnail=false
+MaximumRemoteSize=0
+
+[UiSettings]
+ColorScheme=kvantum
+
+[WM]
+activeBackground=61,61,62
+activeBlend=61,61,62
+activeForeground=255,255,255
+inactiveBackground=61,61,62
+inactiveBlend=61,61,62
+inactiveForeground=155,155,155

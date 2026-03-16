@@ -1,0 +1,143 @@
+#!/usr/bin/env bash
+# save-configs - backup dotfiles to the repo directory
+# Usage: ./save-configs [repo_dir]
+#        defaults to the directory this script lives in
+
+set -euo pipefail
+
+REPO="${1:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}"
+
+# -- color helpers ---------------------------------------------
+GRN='\033[0;32m'; YLW='\033[0;33m'; RED='\033[0;31m'; BLU='\033[0;34m'; RST='\033[0m'
+ok()    { echo -e "${GRN}✓${RST}  $*"; }
+skip()  { echo -e "${YLW}–${RST}  skipped: $*"; }
+error() { echo -e "${RED}✗${RST}  $*"; }
+info()  { echo -e "${BLU}::${RST} $*"; }
+
+# -- copy helper -----------------------------------------------
+save() {
+    local src="$1" dest="$REPO/$2"
+    if [ ! -e "$src" ]; then
+        skip "$src"
+        return
+    fi
+    mkdir -p "$(dirname "$dest")"
+    cp -r "$src" "$dest"
+    ok "$src"
+}
+
+echo ""
+echo "  save-configs - backing up dotfiles to: $REPO"
+echo "  --------------------------------------------"
+echo ""
+
+# -- clean repo dir --------------------------------------------
+info "cleaning repo dir"
+find "$REPO" -mindepth 1 \
+    ! -path "$REPO/.git" \
+    ! -path "$REPO/.git/*" \
+    ! -name "save-configs" \
+    -maxdepth 1 \
+    -exec rm -rf {} + 2>/dev/null || true
+ok "cleaned $REPO"
+echo ""
+
+# -- rofi ------------------------------------------------------
+info "rofi"
+save "$HOME/.config/rofi/launchers/type-3/shared/colors.rasi"   "rofi/shared/colors.rasi"
+save "$HOME/.config/rofi/launchers/type-3/shared/fonts.rasi"    "rofi/shared/fonts.rasi"
+save "$HOME/.config/rofi/launchers/type-3/style-5.rasi"         "rofi/launcher.rasi"
+save "$HOME/.config/networkmanager-dmenu/config.ini"            "networkmanager-dmenu/config.ini"
+
+# -- niri ------------------------------------------------------
+info "niri"
+save "$HOME/.config/niri/config.kdl"   "niri/config.kdl"
+
+# -- input-remapper --------------------------------------------
+info "input-remapper"
+save "$HOME/.config/input-remapper-2/xmodmap.json"   "input-remapper-2/xmodmap.json"
+save "$HOME/.config/input-remapper-2/config.json"    "input-remapper-2/config.json"
+save "$HOME/.config/input-remapper-2/presets"        "input-remapper-2/presets"
+
+# -- vscode ----------------------------------------------------
+info "vscode"
+save "$HOME/.config/Code/User/keybindings.json"   "Code/keybindings.json"
+save "$HOME/.config/Code/User/settings.json"       "Code/settings.json"
+save "$HOME/.config/Code/User/custom.css"          "Code/custom.css"
+
+# -- firefox ---------------------------------------------------
+info "firefox"
+FF_PROFILE=$(find "$HOME/.mozilla/firefox" -maxdepth 1 -name "*.default-release*" -type d | head -1)
+if [ -n "$FF_PROFILE" ]; then
+    save "$FF_PROFILE/chrome/userChrome.css"      "firefox/userChrome.css"
+    save "$FF_PROFILE/chrome/userContent.css"     "firefox/userContent.css"
+else
+    skip "firefox profile not found"
+fi
+
+# -- gtk theme -------------------------------------------------
+info "gtk theme"
+save "$HOME/.config/gtk-3.0/gtk.css"   "gtk/gtk-3.0/gtk.css"
+save "$HOME/.config/gtk-4.0/gtk.css"   "gtk/gtk-4.0/gtk.css"
+save "$HOME/.config/gtk-2.0/gtkrc"     "gtk/gtk-2.0/gtkrc"
+
+# -- scripts ---------------------------------------------------
+info "scripts"
+save "$HOME/.local/bin/scripts/volumeosd"          "scripts/volumeosd"
+save "$HOME/.local/bin/scripts/brightnessosd"      "scripts/brightnessosd"
+save "$HOME/.local/bin/scripts/spotify_notifyd"    "scripts/spotify_notifyd"
+save "$HOME/.local/bin/scripts/playerctl-playerd"  "scripts/playerctl-playerd"
+save "$HOME/.local/bin/scripts/playerctl-control"  "scripts/playerctl-control"
+save "$HOME/.local/bin/scripts/save-configure"     "scripts/save-configure"
+
+# -- swayosd ---------------------------------------------------
+info "swayosd"
+save "$HOME/.config/swayosd/style.css"   "swayosd/style.css"
+
+# -- kvantum ---------------------------------------------------
+info "kvantum"
+save "$HOME/.config/Kvantum/Catppuccin-Black"   "Kvantum/Catppuccin-Black"
+
+# -- mako ------------------------------------------------------
+info "mako"
+save "$HOME/.config/mako/config"   "mako/config"
+
+# -- qt6ct -----------------------------------------------------
+info "qt6ct"
+save "$HOME/.config/qt6ct/qt6ct.conf"   "qt6ct/qt6ct.conf"
+
+# -- qt5ct -----------------------------------------------------
+info "qt5ct"
+save "$HOME/.config/qt5ct/qt5ct.conf"   "qt5ct/qt5ct.conf"
+
+# -- ironbar ---------------------------------------------------
+info "ironbar"
+save "$HOME/.config/ironbar"   "ironbar"
+
+# -- spicetify -------------------------------------------------
+info "spicetify"
+save "$HOME/.config/spicetify/Themes/catppuccin/color.ini"   "spicetify/Themes/catppuccin/color.ini"
+save "$HOME/.config/spicetify/Themes/catppuccin/user.css"    "spicetify/Themes/catppuccin/user.css"
+save "$HOME/.config/spicetify/Extensions"                    "spicetify/Extensions"
+
+# -- code-flags ------------------------------------------------
+info "code-flags"
+save "$HOME/.config/code-flags.conf"   "code-flags.conf"
+
+# -- kdeglobals ------------------------------------------------
+info "kdeglobals"
+save "$HOME/.config/kdeglobals"   "kdeglobals"
+
+# -- user-dirs.dirs --------------------------------------------
+info "user-dirs.dirs"
+save "$HOME/.config/user-dirs.dirs"   "user-dirs.dirs"
+
+# -- dolphinrc -------------------------------------------------
+info "dolphinrc"
+save "$HOME/.config/dolphinrc"   "dolphinrc"
+
+# -- done ------------------------------------------------------
+echo ""
+echo "  --------------------------------------------"
+ok  "done - configs saved to $REPO"
+echo ""

@@ -1,134 +1,139 @@
 {
+	// --- Appearance ---------------------------------------------------------------
+	"workbench.colorTheme": "Material Theme Ocean High Contrast",
+	"workbench.iconTheme": "material-icon-theme",
+	"workbench.preferredHighContrastColorTheme": "Tokyo Night Pro",
+	"material-icon-theme.folders.theme": "classic",
+	"window.zoomLevel": 1,
+	"window.zoomPerWindow": true,
+	"window.titleBarStyle": "native",
+	"window.customTitleBarVisibility": "never",
+	"window.title": "${dirty}${rootPath}${separator}${activeEditorMedium}",
+	"window.density.editorTabHeight": "compact",
+	"window.dialogStyle": "native",
+
+	// --- Window Behavior ---------------------------------------------------------
+	"window.newWindowDimensions": "inherit",
+	"window.openFilesInNewWindow": "on",
+	"window.openFoldersInNewWindow": "on",
+	"window.openWithoutArgumentsInNewWindow": "on",
+	"window.restoreFullscreen": false,
+	"window.restoreWindows": "all",
+
+	// --- Editor: Font -------------------------------------------------------------
+	"editor.fontFamily": "JetBrainsMono Nerd Font",
+	"editor.fontWeight": "normal",
+	"editor.fontLigatures": true,
+
+	// --- Editor: Behavior ---------------------------------------------------------
+	"editor.tabSize": 4,
+	"editor.indentSize": "tabSize",
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"editor.trimAutoWhitespace": false,
+	"editor.formatOnSave": false,
+	"editor.cursorBlinking": "solid",
+	"editor.cursorSmoothCaretAnimation": "on",
+	"editor.smoothScrolling": true,
+	"editor.stickyScroll.enabled": false,
+	"editor.renderWhitespace": "none",
+	"editor.roundedSelection": false,
+	"editor.largeFileOptimizations": true,
+	"editor.inlayHints.enabled": "off",
+	"editor.semanticHighlighting.enabled": false,
+	"editor.colorDecoratorsLimit": 5000,
+	"editor.defaultColorDecorators": "auto",
+
+	// --- Editor: UI ---------------------------------------------------------------
+	"editor.lineNumbers": "on",
+	"editor.glyphMargin": true,
+	"editor.folding": true,
+	"editor.foldingHighlight": true,
+	"editor.minimap.enabled": false,
+	"editor.minimap.autohide": false,
+	"editor.minimap.maxColumn": 200,
+	"editor.minimap.size": "proportional",
+	"editor.scrollbar.vertical": "hidden",
+
+	// --- Workbench ----------------------------------------------------------------
+	"workbench.editor.showTabs": "none",
+	"workbench.editor.empty.hint": "text",
+	"workbench.editor.editorActionsLocation": "hidden",
+	"workbench.activityBar.location": "hidden",
+	"workbench.activityBar.iconClickBehavior": "toggle",
+	"workbench.list.smoothScrolling": true,
+	"workbench.tree.enableStickyScroll": false,
+	"workbench.startupEditor": "none",
+	"workbench.welcomePage.walkthroughs.openOnInstall": true,
+	"workbench.commandPalette.experimental.enableNaturalLanguageSearch": true,
+	"workbench.view.alwaysShowHeaderActions": true,
+	"breadcrumbs.enabled": false,
+
+	// --- Explorer -----------------------------------------------------------------
+	"explorer.confirmDelete": false,
+	"explorer.confirmDragAndDrop": false,
+	"explorer.confirmPasteNative": false,
+
+	// --- Files --------------------------------------------------------------------
+	"files.autoSave": "afterDelay",
+	"files.simpleDialog.enable": true,
+	"files.refactoring.autoSave": false,
+	"files.trimTrailingWhitespace": false,
+	"files.associations": {
+		"*.rmd": "markdown",
+		"*.xci": "json"
+	},
+
+	// --- Terminal -----------------------------------------------------------------
+	"terminal.integrated.defaultProfile.linux": "zsh",
+	"terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+	"terminal.integrated.gpuAcceleration": "on",
+	"terminal.integrated.smoothScrolling": true,
+	"terminal.integrated.tabs.enabled": false,
+	"terminal.integrated.enableImages": false,
+	"terminal.integrated.enableMultiLinePasteWarning": false,
+	"terminal.explorerKind": "integrated",
+	"terminal.external.linuxExec": "alacritty",
+
+	// --- Zen Mode -----------------------------------------------------------------
+	"zenMode.centerLayout": false,
+	"zenMode.fullScreen": false,
+	"zenMode.hideActivityBar": true,
+	"zenMode.hideLineNumbers": false,
+	"zenMode.hideStatusBar": true,
+	"zenMode.restore": true,
+	"zenMode.showTabs": "none",
+	"zenMode.silentNotifications": false,
+
+	// --- Git ----------------------------------------------------------------------
+	"git.autofetch": true,
+	"git.confirmSync": false,
+	"git.confirmEmptyCommits": false,
+	"git.enableSmartCommit": true,
+	"git.openRepositoryInParentFolders": "never",
+	"git.useEditorAsCommitInput": false,
+	"github.gitAuthentication": false,
+	"githubPullRequests.createOnPublishBranch": "never",
+	"git-graph.maxDepthOfRepoSearch": 0,
+
+	// --- Diff Editor -------------------------------------------------------------
+	"diffEditor.renderSideBySide": false,
+
+	// --- Search -------------------------------------------------------------------
+	"search.useIgnoreFiles": false,
+
+	// --- Language: JavaScript / CSS -----------------------------------------------
 	"[javascript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	// "markdown-pdf.displayHeaderFooter"
-	"markdown-pdf.displayHeaderFooter": false,
-	"markdown-pdf.format": "A4",
-	"markdownConverter.Document.HeaderFooterEnabled": false,
-	"markdownConverter.Document.Paper.PaperFormat": {
-		"Format": "A4"
-	},
-	"markdownConverter.Document.Paper.Margin": {
-		"Bottom": "0.2cm",
-		"Top": "0.2cm",
-		"Left": "0.2cm",
-		"Right": "0.2cm"
-	},
-	"markdown-pdf.styles": [
-		"markdown.css"
-	],
-	// css
-	// markfon
-	// "markdown-pdf.breaks": true,
-	"[verilog]": {
-		"editor.defaultFormatter": "eirikpre.systemverilog"
+	"[css]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"prettier.tabWidth": 4,
-	"apc.font.family": "JetBrainsMono Nerd Font",
-	"apc.monospace.font.family": "JetBrainsMono Nerd Font",
-	"apc.electron": {
-		"backgroundColor": "rgba(0, 0, 0, 0.92)",
-		"frame": false,
-		"opacity": 1, // Range: 0-1 (To go fully transparent, set it to 0)
-		"titleBarStyle": "hiddenInset",
-		"transparent": true,
-		"vibrancy": "ultra-dark",
-		"visualEffectState": "active",
-		// "titleBarOverlay": {"height": 0}
-	},
+	"javascript.updateImportsOnFileMove.enabled": "always",
 
-
-	// ver
-
-	"apc.activityBar": {
-		"size": 40,
-		"itemSize": 40,
-		"itemMargin": 0,
-	},
-	"cmake.outputLogEncoding": "auto",
-	"apc.imports": [
-		"file:///home/laperex/.config/Code/User/custom.css",
-	],
-	"apc.stylesheet": {
-		"*": "border-radius: 0px !important",
-		".pane-header": "line-height: 13px !important",
-		".monaco-pane-view .pane>.pane-header h3.title": "font-size: 13px !important",
-		".quick-input-list .monaco-scrollable-element .monaco-list-rows": "padding: 0 0 !important; background-color: rgba(0, 0, 0, 0) !important;",
-
-		// ".monaco-workbench .part>.composite.header-or-footer, .monaco-workbench .part>.composite.title": "color: #00000000",
-
-		// "#workbench\.parts\.panel > div.composite.title.has-composite-bar > div.title-actions > div > div > ul > li.action-item.select-container > select": "color: #ff0000",
-
-		// "#workbench\.parts\.sidebar > div.composite.title > div.title-actions": "display: none",
-		// ".frameless-title-bar:not(.statusbar-top) .monaco-workbench:not(.fullscreen) .auxiliarybar .title-actions, .inline-title-bar:not(.statusbar-top) .monaco-workbench:not(.fullscreen) .auxiliarybar .title-actions, .frameless-title-bar:not(.activitybar-top):not(.statusbar-top) .monaco-workbench:not(.fullscreen) .sidebar .composite.title .title-actions, .inline-title-bar:not(.activitybar-top):not(.statusbar-top) .monaco-workbench:not(.fullscreen) .sidebar .composite.title .title-actions": "display: none",
-		// ".frameless-title-bar:not(.statusbar-top) .monaco-workbench:not(.fullscreen) .auxiliarybar .title-actions, .inline-title-bar:not(.statusbar-top) .monaco-workbench:not(.fullscreen) .auxiliarybar .title-actions, .frameless-title-bar:not(.activitybar-top):not(.statusbar-top) .monaco-workbench:not(.fullscreen) .sidebar .composite.title .title-actions, .inline-title-bar:not(.activitybar-top):not(.statusbar-top) .monaco-workbench:not(.fullscreen) .sidebar .composite.title .title-label": "display: none",
-		// ".monaco-workbench .part > .title > .title-label": "display: none"
-		// ".custom-sidebar-titlebar .monaco-workbench .auxiliarybar>div.composite.title, .custom-sidebar-titlebar .monaco-workbench .auxiliarybar>div.composite.title>div.title-actions, .custom-sidebar-titlebar .monaco-workbench .sidebar>div.composite.title, .custom-sidebar-titlebar .monaco-workbench .sidebar>div.composite.title>div.title-actions": "display: none !important",
-		// ".quick-input-header": "box-shadow: 0 0 0 0 !important",
-		// ".severity-tag.severity-medium": ""
-		// body
-	},
-	"apc.listRow": {
-		// "fontSize": 12,
-		"height": 22,
-		// "parts": {
-		// },
-		"lists": [
-			"customview-tree",
-			"results",
-			"open-editors",
-			"explorer-folders-view",
-			"outline-tree",
-			"scm-view",
-			"debug-view-content",
-			"debug-breakpoints",
-			"tree",
-			// "tabs-list"
-		]
-	},
-	// "editor.scrollbar.ignoreHorizontalScrollbarInContentHeight": true,
-	"window.title": "${dirty}${rootPath}${separator}${activeEditorMedium}",
-	// "workbench.sideBar.location": "right",
-	// sideba
-	// document.querySelector("#workbench\\.parts\\.sidebar > div.composite.title")
-	// "apc.sidebar.titlebar": {
-	// 	"fontSize": 0,
-	// 	"height": 1
-	// },
-	"apc.header": {
-		"compact": 18,
-		"fontSize": 11,
-		// "height": 18,
-	},
-	"apc.statusBar": {
-		"fontSize": 11,
-		"height": 18
-	},
+	// --- Language: C/C++ ---------------------------------------------------------
 	"C_Cpp.codeFolding": "enabled",
-	"C_Cpp.default.includePath": [
-		"${workspaceFolder}/**",
-		"/usr/include/glib-2.0",
-		"/lib/glib-2.0/include",
-		"/usr/include/cairo",
-		"/usr/include",
-		"/usr/lib/",
-		"/usr/share/sdcc/include"
-	],
-	"editor.fontFamily": "JetBrainsMono Nerd Font",
-	// "editor.fontLigatures": true,
-	"systemverilog.disableIndexing": false,
-	"systemverilog.enableIncrementalIndexing": true,
-	"systemverilog.forceFastIndexing": false,
-	"systemverilog.excludeIndexing": "**/build/**",
-	// "systemverilog.includeIndexing": "**/rtl/**",
-	"systemverilog.includeIndexing": [
-		"**rtl/*.{sv,v,svh,vh}",
-	],
-	// "editor.fontFamily": "Iosevka Nerd Font Mono",
-	// "editor.fontSize": 15,
-	// "editor.lineHeight": 1.29,
-	// "systemverilog.excludeIndexing": ""
 	"C_Cpp.formatting": "vcFormat",
 	"C_Cpp.intelliSenseEngine": "disabled",
 	"C_Cpp.maxCachedProcesses": null,
@@ -141,168 +146,134 @@
 	"C_Cpp.vcFormat.newLine.beforeOpenBrace.namespace": "sameLine",
 	"C_Cpp.vcFormat.newLine.beforeOpenBrace.type": "sameLine",
 	"C_Cpp.vcFormat.newLine.beforeWhileInDoWhile": false,
-	"clangd.arguments": [
-		// "-I/usr/share/verilator/include",
-		// "-I/usr/share/opencv4"
-		// "--enable-config",
-		// "--function-arg-placeholders=0",
-		// "--header-insertion=never",
-	],
-	"clangd.enableCodeCompletion": true,
-	"clangd.fallbackFlags": [
-		// "-std=c++20",
-		// "-I/home/laperex/.local/share/vcpkg/installed/x64-linux/include",
-		// "-I/home/laperex/.local/share/vcpkg/installed/x64-linux/include/opencv4"
+	"C_Cpp.default.includePath": [
+		"${workspaceFolder}/**",
+		"/usr/include/glib-2.0",
+		"/lib/glib-2.0/include",
+		"/usr/include/cairo",
+		"/usr/include",
+		"/usr/lib/",
+		"/usr/share/sdcc/include"
 	],
 
+	// --- Language: Clangd --------------------------------------------------------
+	"clangd.enableCodeCompletion": true,
 	"clangd.detectExtensionConflicts": false,
 	"clangd.path": "/home/laperex/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/19.1.2/clangd_19.1.2/bin/clangd",
+
+	// --- Language: SystemVerilog --------------------------------------------------
+	"[verilog]": {
+		"editor.defaultFormatter": "eirikpre.systemverilog"
+	},
+	"[systemverilog]": {
+		"editor.fontLigatures": false,
+		"editor.formatOnType": true,
+		"editor.defaultFormatter": "eirikpre.systemverilog",
+		"editor.quickSuggestions": {
+			"comments": "on",
+			"strings": "on",
+			"other": "on"
+		}
+	},
+	"[systemverilogheader]": {
+		"editor.fontLigatures": false
+	},
+	"[verilogheader]": {
+		"editor.fontLigatures": true
+	},
+	"[vhdl]": {
+		"editor.formatOnType": true,
+		"editor.quickSuggestions": {
+			"comments": "on",
+			"strings": "on",
+			"other": "on"
+		}
+	},
+	"systemverilog.disableIndexing": false,
+	"systemverilog.enableIncrementalIndexing": true,
+	"systemverilog.forceFastIndexing": false,
+	"systemverilog.excludeIndexing": "**/build/**",
+	"systemverilog.includeIndexing": ["**rtl/*.{sv,v,svh,vh}"],
+	"systemverilog.parallelProcessing": 20,
+	"systemverilog.documentSymbolsPrecision": "full",
+	"systemverilog.maxLineCountIndexing": 40000,
+	"systemverilog.formatCommand": "verible-verilog-format --indentation_spaces 4",
+	"systemverilog.languageServer.path": "verible-verilog-ls",
+	"systemverilog.languageServer.arguments": ["--rules_config_search"],
+	"verilog.linting.linter": "xvlog",
+	"verilog.linting.path": "/opt/Xilinx/Vivado/2024.1/bin/",
+	"verilog.linting.xvlog.arguments": "-I /opt/Xilinx/Vivado/2024.1/data/xsim/system_verilog/uvm_include/uvm_macros.svh",
+
+	// --- Language: Haskell -------------------------------------------------------
+	"haskell.ghcupExecutablePath": "~/.ghcup/bin/ghcup",
+	"haskell.manageHLS": "GHCup",
+
+	// --- CMake -------------------------------------------------------------------
 	"cmake.configureOnOpen": false,
+	"cmake.loadCompileCommands": true,
+	"cmake.outputLogEncoding": "auto",
 	"cmake.revealLog": "focus",
 	"cmake.showConfigureWithDebuggerNotification": false,
 	"cmake.showOptionsMovedNotification": false,
-	"diffEditor.renderSideBySide": false,
-	"dotnetAcquisitionExtension.enableTelemetry": false,
-	"telemetry.telemetryLevel": "off",
-	"gitlens.telemetry.enabled": false,
-	// telemetry
-	"editor.colorDecoratorsLimit": 5000,
-	"editor.cursorBlinking": "solid",
-	"editor.cursorSmoothCaretAnimation": "on",
-	"editor.defaultColorDecorators": "auto",
-	"editor.detectIndentation": false,
-	"editor.folding": true,
-	"editor.foldingHighlight": true,
-	"editor.fontWeight": "normal",
-	"editor.formatOnSave": false,
-	"editor.glyphMargin": true,
-	"editor.indentSize": "tabSize",
-	"editor.inlayHints.enabled": "off",
-	"editor.insertSpaces": false,
-	"editor.largeFileOptimizations": true,
-	"editor.lineNumbers": "on",
-	"editor.minimap.autohide": false,
-	"editor.minimap.maxColumn": 200,
-	"editor.minimap.size": "proportional",
-	"editor.renderWhitespace": "none",
-	"editor.roundedSelection": false,
-	"editor.scrollbar.vertical": "hidden",
-	"editor.semanticHighlighting.enabled": false,
-	"editor.semanticTokenColorCustomizations": {
-		"[Material Theme Ocean High Contrast]": {
-			"rules": {
-				"parameter": { // remove the ":cpp" modifier to apply to all languages
-					// "foreground": "#dcff52", // TODO
-					// "fontStyle": "italic bold underline strikethrough"
-				}
-			}
-		}
-	},
-	"editor.smoothScrolling": true,
-	"editor.stickyScroll.enabled": false,
-	"editor.tabSize": 4,
-	"editor.trimAutoWhitespace": false,
-	"explorer.confirmDelete": false,
-	"explorer.confirmDragAndDrop": false,
-	"files.associations": {
-		"*.rmd": "markdown",
-		"*.xci": "json",
-		// "*.sv": "systemverilogheader",
-		// "*.svh": "systemverilog"
-	},
-	"files.refactoring.autoSave": false,
-	"files.simpleDialog.enable": true,
-	"files.trimTrailingWhitespace": false,
-	"git-graph.maxDepthOfRepoSearch": 0,
-	"git.autofetch": true,
-	"git.confirmSync": false,
-	"git.enableSmartCommit": true,
-	"git.openRepositoryInParentFolders": "never",
-	"git.useEditorAsCommitInput": false,
-	"gitlens.ai.experimental.openai.model": "gpt-4-1106-preview",
-	"gitlens.ai.experimental.provider": "openai",
-	"haskell.ghcupExecutablePath": "~/.ghcup/bin/ghcup",
-	"haskell.manageHLS": "GHCup",
-	"powermode.combo.counterEnabled": "hide",
-	"powermode.combo.counterSize": 0,
-	"powermode.enabled": false,
-	"powermode.explosions.gifMode": "restart",
-	"powermode.presets": "flames",
-	"powermode.shake.enabled": false,
-	"ppm-pgm-viewer-for-vscode.imagepreview.autoScalingMode": true,
-	"ppm-pgm-viewer-for-vscode.imagepreview.hidePanel": true,
-	"redhat.telemetry.enabled": false,
-	"settings.cycle": [
-		{
-			"id": "lineNumbers",
-			"values": [
-				{
-					"editor.folding": false,
-					"editor.glyphMargin": false,
-					"editor.lineNumbers": "off"
-				},
-				{
-					"editor.folding": true,
-					"editor.glyphMargin": true,
-					"editor.lineNumbers": "on"
-				}
-			]
-		},
-		{
-			"id": "tabVisibility",
-			"values": [
-				{
-					"workbench.editor.showTabs": "none"
-				},
-				{
-					"workbench.editor.showTabs": "multiple"
-				}
-				// {
-				// 	"workbench.editor.showTabs": "single",
-				// }
-			]
-		}
+	"cmake.pinnedCommands": [
+		"workbench.action.tasks.configureTaskRunner",
+		"workbench.action.tasks.runTask"
 	],
-	"stm32-for-vscode.armkmchainPath": false,
-	"stm32-for-vscode.makePath": "/usr/bin/make",
-	"stm32-for-vscode.openOCDPath": false,
-	"STM32VSCodeExtension.productFinder.executablePath": "/usr/bin/stmcufinder",
-	"STM32VSCodeExtension.projectCreator.executablePath": "/usr/bin/stm32cubemx",
-	"terminal.explorerKind": "integrated",
-	"terminal.external.linuxExec": "alacritty",
-	"terminal.integrated.defaultProfile.linux": "zsh",
-	"terminal.integrated.enableImages": false,
-	// "terminal.integrated.enableMultiLinePasteWarning": false,
-	"terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
-	"terminal.integrated.gpuAcceleration": "on",
-	"terminal.integrated.smoothScrolling": true,
-	"terminal.integrated.tabs.enabled": false,
-	"update.mode": "none",
-	
-	"systemverilog.languageServer.path": "verible-verilog-ls",
-	"systemverilog.languageServer.arguments": ["--rules_config_search"],
 
-	// "editor.bracketPairColorization.enabled": true,
-	// "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
-	"vscode-pets.theme": "forest",
-	// "vscode_custom_css.imports": [
-	// 	// "file:///home/laperex/.config/Code/User/border.css",
-	// 	"file:///home/laperex/Programming/explorer-rename-css/media/custom.css",
-	// ],
-	"window.customTitleBarVisibility": "never",
-	"window.dialogStyle": "native",
-	"window.newWindowDimensions": "inherit",
-	"window.openFilesInNewWindow": "on",
-	"window.openFoldersInNewWindow": "on",
-	"window.openWithoutArgumentsInNewWindow": "on",
-	"window.restoreFullscreen": false,
-	"window.restoreWindows": "all",
-	"window.zoomLevel": 1,
-	"window.zoomPerWindow": true,
-	"workbench.activityBar.iconClickBehavior": "toggle",
+	// --- Makefile ----------------------------------------------------------------
+	"makefile.configureOnOpen": true,
+
+	// --- APC Customize UI --------------------------------------------------------
+	"apc.font.family": "JetBrainsMono Nerd Font",
+	"apc.monospace.font.family": "JetBrainsMono Nerd Font",
+	"apc.electron": {
+		"backgroundColor": "rgba(0, 0, 0, 0.92)",
+		"frame": false,
+		"opacity": 1,
+		"titleBarStyle": "hiddenInset",
+		"transparent": true,
+		"vibrancy": "ultra-dark",
+		"visualEffectState": "active"
+	},
+	"apc.activityBar": {
+		"size": 40,
+		"itemSize": 40,
+		"itemMargin": 0
+	},
+	"apc.imports": [
+		"file:///home/laperex/.config/Code/User/custom.css"
+	],
+	"apc.stylesheet": {
+		"*": "border-radius: 0px !important",
+		".pane-header": "line-height: 13px !important",
+		".monaco-pane-view .pane>.pane-header h3.title": "font-size: 13px !important",
+		".quick-input-list .monaco-scrollable-element .monaco-list-rows": "padding: 0 0 !important; background-color: rgba(0, 0, 0, 0) !important;"
+	},
+	"apc.listRow": {
+		"height": 22,
+		"lists": [
+			"customview-tree",
+			"results",
+			"open-editors",
+			"explorer-folders-view",
+			"outline-tree",
+			"scm-view",
+			"debug-view-content",
+			"debug-breakpoints",
+			"tree"
+		]
+	},
+	"apc.header": {
+		"compact": 18,
+		"fontSize": 11
+	},
+	"apc.statusBar": {
+		"fontSize": 11,
+		"height": 18
+	},
+
+	// --- Color Customizations -----------------------------------------------------
 	"workbench.colorCustomizations": {
-		"[Tokyo Night Pro]": {},
-
 		"activityBar.border": "#00000000",
 		"editorGroup.emptyBackground": "#00000000",
 		"editorGroupHeader.border": "#00000000",
@@ -321,6 +292,7 @@
 		"tab.inactiveBackground": "#00000000",
 		"titleBar.border": "#00000000",
 		"scrollbarSlider.hoverBackground": "#00000000",
+		"scrollbarSlider.background": "#00000000",
 		"activityBar.background": "#00000000",
 		"editorGutter.background": "#00000000",
 		"breadcrumb.background": "#ff000000",
@@ -337,10 +309,8 @@
 		"statusBar.background": "#00000000",
 		"welcomePage.background": "#00000000",
 		"welcomePage.progress.background": "#00000000",
-		"scrollbarSlider.background": "#00000000",
 		"notifications.background": "#00000050",
-		/* _PRIMARY_BEGIN */
-		
+
 		"input.border": "#B4BEFE70",
 		"button.background": "#B4BEFE",
 		"button.secondaryBackground": "#B4BEFE74",
@@ -380,35 +350,120 @@
 		"editor.selectionBackground": "#B4BEFE2f",
 		"selection.background": "#B4BEFE2f",
 		"editorIndentGuide.activeBackground1": "#B4BEFE70"
+	},
 
-		/* _PRIMARY_END */
+	// --- Token Color Customizations -----------------------------------------------
+	"editor.tokenColorCustomizations": {
+		"[Tokyo Night Pro]": {
+			"textMateRules": []
+		}
 	},
-	// language
-	"workbench.commandPalette.experimental.enableNaturalLanguageSearch": true,
-	"workbench.editor.editorActionsLocation": "hidden",
-	"workbench.editor.empty.hint": "text",
-	"workbench.list.smoothScrolling": true,
-	"workbench.startupEditor": "none",
-	"workbench.tree.enableStickyScroll": false,
-	"workbench.welcomePage.walkthroughs.openOnInstall": true,
-	"zenMode.centerLayout": false,
-	"zenMode.fullScreen": false,
-	"zenMode.hideActivityBar": true,
-	"zenMode.hideLineNumbers": false,
-	"zenMode.hideStatusBar": true,
-	"zenMode.restore": true,
-	"zenMode.showTabs": "none",
-	"zenMode.silentNotifications": false,
-	"[css]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	"editor.semanticTokenColorCustomizations": {
+		"[Material Theme Ocean High Contrast]": {
+			"rules": {}
+		}
 	},
-	"cmake.loadCompileCommands": true,
-	// compilecomm
-	"cmake.pinnedCommands": [
-		"workbench.action.tasks.configureTaskRunner",
-		"workbench.action.tasks.runTask"
+
+	// --- Markdown -----------------------------------------------------------------
+	"markdown-pdf.displayHeaderFooter": false,
+	"markdown-pdf.format": "A4",
+	"markdown-pdf.styles": ["markdown.css"],
+	"markdownConverter.Document.HeaderFooterEnabled": false,
+	"markdownConverter.Document.Paper.PaperFormat": { "Format": "A4" },
+	"markdownConverter.Document.Paper.Margin": {
+		"Bottom": "0.2cm",
+		"Top": "0.2cm",
+		"Left": "0.2cm",
+		"Right": "0.2cm"
+	},
+	"markdown-preview-enhanced.enablePreviewZenMode": false,
+	"markdown-preview-enhanced.codeBlockTheme": "darcula.css",
+	"markdown-preview-enhanced.revealjsTheme": "black.css",
+	"markdown-preview-enhanced.previewTheme": "github-dark.css",
+
+	// --- Notebook / Jupyter -------------------------------------------------------
+	"notebook.output.scrolling": true,
+	"notebook.cellToolbarLocation": {
+		"default": "right",
+		"jupyter-notebook": "left"
+	},
+	"jupyter.askForKernelRestart": false,
+
+	// --- Hardware / EDA -----------------------------------------------------------
+	"digital-ide.welcome.show": false,
+	"digital-ide.prj.vivado.install.path": "/opt/Xilinx/Vivado/2024.1/bin/",
+	"EIDE.Repository.UseProxy": false,
+	"EIDE.C51.INI.Path": "/home/laperex/.wine/drive_c/Keil_v5/C51/BIN/C51.exe",
+	"KeilAssistant.Keil.HOME": {
+		"MDK": "/home/laperex/.wine/drive_c/Keil_v5",
+		"C51": "/home/laperex/.wine/drive_c/Keil_v5"
+	},
+	"stm32-for-vscode.armkmchainPath": false,
+	"stm32-for-vscode.makePath": "/usr/bin/make",
+	"stm32-for-vscode.openOCDPath": false,
+	"STM32VSCodeExtension.productFinder.executablePath": "/usr/bin/stmcufinder",
+	"STM32VSCodeExtension.projectCreator.executablePath": "/usr/bin/stm32cubemx",
+
+	// --- Misc Extensions ---------------------------------------------------------
+	"hediet.vscode-drawio.resizeImages": null,
+	"hediet.vscode-drawio.theme": "min",
+	"hediet.vscode-drawio.appearance": "dark",
+	"gitlens.ai.experimental.openai.model": "gpt-4-1106-preview",
+	"gitlens.ai.experimental.provider": "openai",
+	"regex-previewer.enableCodeLens": true,
+	"tabnine.experimentalAutoImports": true,
+	"ppm-pgm-viewer-for-vscode.imagepreview.autoScalingMode": true,
+	"ppm-pgm-viewer-for-vscode.imagepreview.hidePanel": true,
+	"vscode-office.editorTheme": "Github Dark",
+	"vscode-pets.theme": "forest",
+	"vsicons.dontShowNewVersionMessage": true,
+	"workbench.editorAssociations": {
+		"{hexdiff}:/**/*.*": "hexEditor.hexedit",
+		"*.o": "hexEditor.hexedit"
+	},
+	"powermode.enabled": false,
+	"powermode.combo.counterEnabled": "hide",
+	"powermode.combo.counterSize": 0,
+	"powermode.explosions.gifMode": "restart",
+	"powermode.presets": "flames",
+	"powermode.shake.enabled": false,
+
+	// --- Settings Cycle -----------------------------------------------------------
+	"settings.cycle": [
+		{
+			"id": "lineNumbers",
+			"values": [
+				{
+					"editor.folding": false,
+					"editor.glyphMargin": false,
+					"editor.lineNumbers": "off"
+				},
+				{
+					"editor.folding": true,
+					"editor.glyphMargin": true,
+					"editor.lineNumbers": "on"
+				}
+			]
+		},
+		{
+			"id": "tabVisibility",
+			"values": [
+				{ "workbench.editor.showTabs": "none" },
+				{ "workbench.editor.showTabs": "multiple" }
+			]
+		}
 	],
-	"files.autoSave": "afterDelay",
+
+	// --- Telemetry (disabled) ----------------------------------------------------
+	"telemetry.telemetryLevel": "off",
+	"gitlens.telemetry.enabled": false,
+	"dotnetAcquisitionExtension.enableTelemetry": false,
+	"redhat.telemetry.enabled": false,
+
+	// --- Updates (disabled) ------------------------------------------------------
+	"update.mode": "none",
+
+	// --- Sync Ignored Extensions -------------------------------------------------
 	"settingsSync.ignoredExtensions": [
 		"nowsci.glassit-linux",
 		"marnix.tokyo-night-pro",
@@ -416,172 +471,6 @@
 		"jeroen-meijer.shibuya",
 		"shalldie.background",
 		"carlos18mz.cyberpunk-2077-rebuild",
-		"vscode.coffeescript",
-	],
-	"notebook.output.scrolling": true,
-	"breadcrumbs.enabled": false,
-	"markdown-preview-enhanced.enablePreviewZenMode": false,
-	"markdown-preview-enhanced.codeBlockTheme": "darcula.css",
-	"markdown-preview-enhanced.revealjsTheme": "black.css",
-	"markdown-preview-enhanced.previewTheme": "github-dark.css",
-	"github.gitAuthentication": false,
-	// "systemverilog.compileOnOpen": true,
-	// "systemverilog.compilerType": ,
-	// "systemverilog.verifyOnOpen": false,
-	// "systemverilog.antlrVerification": true,
-	
-	// veriloghi
-	
-	
-	"systemverilog.parallelProcessing": 20,
-	"systemverilog.documentSymbolsPrecision": "full",
-	"systemverilog.formatCommand": "verible-verilog-format --indentation_spaces 4",
-	"editor.tokenColorCustomizations": {
-		"[Tokyo Night Pro]": {
-			"textMateRules": [
-				// {
-				// 	"scope": [
-				// 		"string.regexp.identifier.systemverilog"
-				// 	],
-				// 	"settings": {
-				// 		// "foreground": "#e06c75"
-				// 	}
-				// }
-			]
-		}
-		// Customize per theme or globally
-		// "[Theme Name]": {
-		// 	"textMateRules": [
-		// 		{
-		// 			// Workaround: Extension marks escaped identifiers as regular expressions to prevent bracket matching,
-		// 			// so recoloring it back to identifier color
-		// 			"scope": [
-		// 				"string.regexp.identifier.systemverilog"
-		// 			],
-		// 			"settings": {
-		// 				"foreground": "#e06c75"
-		// 			}
-		// 		}
-		// 	]
-		// }
-	},
-	"[systemverilog]": {
-		"editor.fontLigatures": false,
-		"editor.quickSuggestions": {
-			"comments": "on",
-			"strings": "on",
-			"other": "on"
-		},
-		"editor.formatOnType": true,
-		"editor.defaultFormatter": "eirikpre.systemverilog"
-	},
-	"[systemverilogheader]": {
-		// "highligh"
-		"editor.fontLigatures": false
-	},
-	"[verilogheader]": {
-		"editor.fontLigatures": true
-	},
-	"editor.fontLigatures": true,
-	"[vhdl]": {
-		"editor.quickSuggestions": {
-			"comments": "on",
-			"strings": "on",
-			"other": "on"
-		},
-		"editor.formatOnType": true
-	},
-	"[buildconfig]": {
-		"editor.quickSuggestions": {
-			"comments": "on",
-			"strings": "on",
-			"other": "on"
-		},
-		"editor.formatOnType": true
-	},
-	"workbench.view.alwaysShowHeaderActions": true,
-	"digital-ide.welcome.show": false,
-	"digital-ide.prj.vivado.install.path": "/opt/Xilinx/Vivado/2024.1/bin/",
-	"hediet.vscode-drawio.resizeImages": null,
-	// "emeraldwalk.runonsave": {
-	// 	"commands": [
-	// 		{
-	// 			"match": ".*\\.v$",  // Runs only on Verilog files
-	// 			"cmd": "fix_spacing ${file}",
-	// 			// "isAsync": false
-	// 		}
-	// 	]
-	// }
-	"hediet.vscode-drawio.theme": "min",
-	"hediet.vscode-drawio.appearance": "dark",
-	"material-icon-theme.folders.theme": "classic",
-	"workbench.editorAssociations": {
-		"{hexdiff}:/**/*.*": "hexEditor.hexedit",
-		"*.o": "hexEditor.hexedit"
-	},
-	"vsicons.dontShowNewVersionMessage": true,
-	"editor.minimap.enabled": false,
-	"EIDE.Repository.UseProxy": false,
-	"EIDE.C51.INI.Path": "/home/laperex/.wine/drive_c/Keil_v5/C51/BIN/C51.exe",
-	"KeilAssistant.Keil.HOME": {
-		"MDK": "/home/laperex/.wine/drive_c/Keil_v5",
-		"C51": "/home/laperex/.wine/drive_c/Keil_v5"
-	},
-	"makefile.configureOnOpen": true,
-	"notebook.cellToolbarLocation": {
-		"default": "right",
-		"jupyter-notebook": "left"
-	},
-	"window.titleBarStyle": "native",
-	"vscode-office.editorTheme": "Github Dark",
-	"search.useIgnoreFiles": false,
-	"workbench.iconTheme": "material-icon-theme",
-	"explorer.confirmPasteNative": false,
-	// markdown
-	// "ctags-companion.command": "ctags -R --fields=+nKz --langmap=SystemVerilog:+.sv -R rtl /opt/uvm-1.2/src",
-
-	// // these get passed to linters and other tools with -I, or the correct format for that tool
-	// 	"rtl/sim",
-	// 	"rtl/src"
-	// ],
-	// includes and '-y .sv_cache/files' are already passed to linters
-	// multiple linters can run concurrently
-	// you can specify if some can only run at the project level
-	// :
-	// tools will use the default name on the path if not given
-	"javascript.updateImportsOnFileMove.enabled": "always",
-	"workbench.editor.showTabs": "none",
-	// select directories to format on save
-	// 	"hdl/my/project/with/formatting"
-	// ],
-	// verilog.blu
-	// bluespec
-	// blusp
-	// verilog.linting.
-	// "verilog.ctags.path": "/usr/bin/",
-
-	"verilog.linting.linter": "xvlog",
-	"verilog.linting.path": "/opt/Xilinx/Vivado/2024.1/bin/",
-	// "verilog.linting.xvlog.arguments": "-uvm_version 1.2"
-
-	// "jupyter.themeMatplotlibPlots": true
-
-	"regex-previewer.enableCodeLens": true,
-	"tabnine.experimentalAutoImports": true,
-	"window.density.editorTabHeight": "compact",
-	"workbench.activityBar.location": "hidden",
-	"terminal.integrated.enableMultiLinePasteWarning": false,
-	// "vaporview.customColor1": "#000000",
-	// "vaporview.customColor2": "#000000",
-	// "vaporview.customColor3": "#000000",
-	// "vaporview.customColor4": "#000000"
-	"git.confirmEmptyCommits": false,
-	"githubPullRequests.createOnPublishBranch": "never",
-	"jupyter.askForKernelRestart": false,
-	"workbench.preferredHighContrastColorTheme": "Tokyo Night Pro",
-	"verilog.linting.xvlog.arguments": "-I /opt/Xilinx/Vivado/2024.1/data/xsim/system_verilog/uvm_include/uvm_macros.svh",
-	"systemverilog.maxLineCountIndexing": 40000,
-	"workbench.colorTheme": "Material Theme Ocean High Contrast",
-	// hardware
-	// file.asso
+		"vscode.coffeescript"
+	]
 }
