@@ -202,7 +202,7 @@
 	"systemverilog.languageServer.arguments": ["--rules_config_search"],
 	"verilog.linting.linter": "xvlog",
 	"verilog.linting.path": "/opt/Xilinx/Vivado/2024.1/bin/",
-	"verilog.linting.xvlog.arguments": "-I /opt/Xilinx/Vivado/2024.1/data/xsim/system_verilog/uvm_include/uvm_macros.svh",
+	// "verilog.linting.xvlog.arguments": "-I /opt/Xilinx/Vivado/2024.1/data/xsim/system_verilog/uvm_include/uvm_macros.svh",
 
 	// --- Language: Haskell -------------------------------------------------------
 	"haskell.ghcupExecutablePath": "~/.ghcup/bin/ghcup",

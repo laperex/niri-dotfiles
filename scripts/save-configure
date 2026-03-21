@@ -44,9 +44,9 @@ echo ""
 
 # -- rofi ------------------------------------------------------
 info "rofi"
-save "$HOME/.config/rofi/launchers/type-3/shared/colors.rasi"   "rofi/shared/colors.rasi"
-save "$HOME/.config/rofi/launchers/type-3/shared/fonts.rasi"    "rofi/shared/fonts.rasi"
-save "$HOME/.config/rofi/launchers/type-3/style-5.rasi"         "rofi/launcher.rasi"
+save "$HOME/.config/rofi/shared/colors.rasi"   "rofi/shared/colors.rasi"
+save "$HOME/.config/rofi/shared/fonts.rasi"    "rofi/shared/fonts.rasi"
+save "$HOME/.config/rofi/launcher.rasi"         "rofi/launcher.rasi"
 save "$HOME/.config/networkmanager-dmenu/config.ini"            "networkmanager-dmenu/config.ini"
 
 # -- niri ------------------------------------------------------
