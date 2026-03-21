@@ -9,7 +9,6 @@
 	"window.titleBarStyle": "native",
 	"window.customTitleBarVisibility": "never",
 	"window.title": "${dirty}${rootPath}${separator}${activeEditorMedium}",
-	"window.density.editorTabHeight": "compact",
 	"window.dialogStyle": "native",
 
 	// --- Window Behavior ---------------------------------------------------------
@@ -79,10 +78,11 @@
 	"files.simpleDialog.enable": true,
 	"files.refactoring.autoSave": false,
 	"files.trimTrailingWhitespace": false,
-	"files.associations": {
-		"*.rmd": "markdown",
-		"*.xci": "json"
-	},
+	// "files.associations": {
+	// 	"*.rmd": "markdown",
+	// 	"*.xci": "json",
+	// 	// "*.sv": "systemverilogheader"
+	// },
 
 	// --- Terminal -----------------------------------------------------------------
 	"terminal.integrated.defaultProfile.linux": "zsh",
@@ -167,28 +167,45 @@
 	},
 	"[systemverilog]": {
 		"editor.fontLigatures": false,
-		"editor.formatOnType": true,
+		// 	"editor.formatOnType": true,
 		"editor.defaultFormatter": "eirikpre.systemverilog",
 		"editor.quickSuggestions": {
-			"comments": "on",
-			"strings": "on",
+			"comments": "off",
+			"strings": "off",
 			"other": "on"
 		}
 	},
-	"[systemverilogheader]": {
-		"editor.fontLigatures": false
+	// "[systemverilogheader]": {
+	// 	// "editor.semanticHighlighting.enabled": "configuredByTheme"
+	// 	// editor.default,
+	// 	"editor.quickSuggestions": {
+	// 		"comments": "on",
+	// 		"strings": "on",
+	// 		"other": "on"
+	// 	},
+		
+	// 	"editor.fontLigatures": false
+	// },
+	// "[verilogheader]": {
+	// 	"editor.fontLigatures": true
+	// },
+	// "[vhdl]": {
+	// 	"editor.formatOnType": true,
+	// 	"editor.quickSuggestions": {
+	// 		"comments": "on",
+	// 		"strings": "on",
+	// 		"other": "on"
+	// 	}
+	// },
+	
+	
+	"files.associations": {
+		"*.sv": "systemverilog",
+		"*.svh": "systemverilog",
+		"*.v": "verilog"
 	},
-	"[verilogheader]": {
-		"editor.fontLigatures": true
-	},
-	"[vhdl]": {
-		"editor.formatOnType": true,
-		"editor.quickSuggestions": {
-			"comments": "on",
-			"strings": "on",
-			"other": "on"
-		}
-	},
+	
+	
 	"systemverilog.disableIndexing": false,
 	"systemverilog.enableIncrementalIndexing": true,
 	"systemverilog.forceFastIndexing": false,
@@ -198,10 +215,30 @@
 	"systemverilog.documentSymbolsPrecision": "full",
 	"systemverilog.maxLineCountIndexing": 40000,
 	"systemverilog.formatCommand": "verible-verilog-format --indentation_spaces 4",
+	// systemverilog.
 	"systemverilog.languageServer.path": "verible-verilog-ls",
 	"systemverilog.languageServer.arguments": ["--rules_config_search"],
+
 	"verilog.linting.linter": "xvlog",
 	"verilog.linting.path": "/opt/Xilinx/Vivado/2024.1/bin/",
+	"verilog.ctags.enabled": true,
+
+	// "verilog.inlayHints.ports": "off",
+	// "verilog.inlayHints.wildcardPorts": "off",
+	// "verilog.languageServer.svls.enabled": false,
+	// "verilogsv.disableSuggestions": false,
+	
+	
+	"verilog.lint.modelsim.enabled": false,
+	"verilog.lint.iverilog.enabled": false,
+	"verilog.lint.slang.enabled": false,
+	"verilog.lint.verilator.enabled": false,
+	"verilog.lint.xcelium.enabled": false,
+	"verilog.lint.xvlog.enabled": false,
+	"verilog.lint.xvlog.path": "/opt/Xilinx/Vivado/2024.1/bin/xvlog",
+	"verilog.lint.xvlog.runAtFileLocation": true,
+
+	"verilog.ctags.path": "/usr/bin/ctags",
 	// "verilog.linting.xvlog.arguments": "-I /opt/Xilinx/Vivado/2024.1/data/xsim/system_verilog/uvm_include/uvm_macros.svh",
 
 	// --- Language: Haskell -------------------------------------------------------
@@ -353,16 +390,17 @@
 	},
 
 	// --- Token Color Customizations -----------------------------------------------
-	"editor.tokenColorCustomizations": {
-		"[Tokyo Night Pro]": {
-			"textMateRules": []
-		}
-	},
-	"editor.semanticTokenColorCustomizations": {
-		"[Material Theme Ocean High Contrast]": {
-			"rules": {}
-		}
-	},
+	// "editor.tokenColorCustomizations": {
+	// 	"[Tokyo Night Pro]": {
+	// 		"textMateRules": []
+	// 	}
+	// },
+	// "editor.semanticTokenColorCustomizations": {
+	// 	"[Material Theme Ocean High Contrast]": {
+	// 		"rules": {}
+	// 	}
+	// },
+	
 
 	// --- Markdown -----------------------------------------------------------------
 	"markdown-pdf.displayHeaderFooter": false,
@@ -472,5 +510,7 @@
 		"shalldie.background",
 		"carlos18mz.cyberpunk-2077-rebuild",
 		"vscode.coffeescript"
-	]
+	],
+	"window.density.editorTabHeight": "compact",
+	// "extensions.ignoreRecommendations": true,
 }
