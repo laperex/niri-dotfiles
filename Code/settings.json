@@ -58,7 +58,6 @@
 	"workbench.editor.showTabs": "none",
 	"workbench.editor.empty.hint": "text",
 	"workbench.editor.editorActionsLocation": "hidden",
-	"workbench.activityBar.location": "hidden",
 	"workbench.activityBar.iconClickBehavior": "toggle",
 	"workbench.list.smoothScrolling": true,
 	"workbench.tree.enableStickyScroll": false,
@@ -162,19 +161,21 @@
 	"clangd.path": "/home/laperex/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/19.1.2/clangd_19.1.2/bin/clangd",
 
 	// --- Language: SystemVerilog --------------------------------------------------
-	"[verilog]": {
-		"editor.defaultFormatter": "eirikpre.systemverilog"
-	},
+	// "[verilog]": {
+	// 	"editor.defaultFormatter": "eirikpre.systemverilog"
+	// },
 	"[systemverilog]": {
 		"editor.fontLigatures": false,
-		// 	"editor.formatOnType": true,
-		"editor.defaultFormatter": "eirikpre.systemverilog",
-		"editor.quickSuggestions": {
-			"comments": "off",
-			"strings": "off",
-			"other": "on"
-		}
+		"editor.bracketPairColorization.enabled": false
+		// // 	"editor.formatOnType": true,
+		// "editor.defaultFormatter": "eirikpre.systemverilog",
+		// "editor.quickSuggestions": {
+		// 	"comments": "off",
+		// 	"strings": "off",
+		// 	"other": "on"
+		// }
 	},
+	
 	// "[systemverilogheader]": {
 	// 	// "editor.semanticHighlighting.enabled": "configuredByTheme"
 	// 	// editor.default,
@@ -207,7 +208,7 @@
 	
 	
 	"systemverilog.disableIndexing": false,
-	"systemverilog.enableIncrementalIndexing": true,
+	"systemverilog.enableIncrementalIndexing": false,
 	"systemverilog.forceFastIndexing": false,
 	"systemverilog.excludeIndexing": "**/build/**",
 	"systemverilog.includeIndexing": ["**rtl/*.{sv,v,svh,vh}"],
@@ -215,18 +216,44 @@
 	"systemverilog.documentSymbolsPrecision": "full",
 	"systemverilog.maxLineCountIndexing": 40000,
 	"systemverilog.formatCommand": "verible-verilog-format --indentation_spaces 4",
-	// systemverilog.
+	
 	"systemverilog.languageServer.path": "verible-verilog-ls",
 	"systemverilog.languageServer.arguments": ["--rules_config_search"],
 
 	"verilog.linting.linter": "xvlog",
 	"verilog.linting.path": "/opt/Xilinx/Vivado/2024.1/bin/",
-	"verilog.ctags.enabled": true,
+	"verilog.ctags.enabled": false,
+	"verilog.ctags.path": "/usr/bin/ctags",
+	
+	"verible.path": "/usr/bin/verible-verilog-ls",
+	"verible.arguments": ["--rules_config_search"],
 
+	"slang.path": "/home/laperex/.temp/slang-server/build/bin/slang-server",
+	"slang.args": [
+		// "--ignore-unknown-modules",
+		// "--suppress-warnings", "*",
+		// "-Wno-unnamed-genblk",
+		// "--include-path", "/opt/Xilinx/Vivado/2024.1/data/xsim/system_verilog/uvm_include",
+		// "/opt/Xilinx/Vivado/2024.1/data/xsim/system_verilog/uvm_include/uvm_macros.svh",
+		// "/opt/Xilinx/Vivado/2024.1/data/verilog/src/glbl.v"
+	],
+
+	// "slang.args": [
+	// 	"+incdir+/opt/Xilinx/Vivado/2024.1/data/xsim/system_verilog/uvm_include",
+    //     "/opt/Xilinx/Vivado/2024.1/data/xsim/system_verilog/src/uvm_pkg.sv",
+    //     "+incdir+srcs/rtl",
+    //     "+incdir+srcs/sim",
+    //     "srcs/rtl/**/*.sv",
+    //     "srcs/sim/**/*.sv"
+	// ],
+	
 	// "verilog.inlayHints.ports": "off",
 	// "verilog.inlayHints.wildcardPorts": "off",
 	// "verilog.languageServer.svls.enabled": false,
 	// "verilogsv.disableSuggestions": false,
+	
+	// slag
+	
 	
 	
 	"verilog.lint.modelsim.enabled": false,
@@ -235,15 +262,15 @@
 	"verilog.lint.verilator.enabled": false,
 	"verilog.lint.xcelium.enabled": false,
 	"verilog.lint.xvlog.enabled": false,
-	"verilog.lint.xvlog.path": "/opt/Xilinx/Vivado/2024.1/bin/xvlog",
-	"verilog.lint.xvlog.runAtFileLocation": true,
+	// "verilog.lint.xvlog.path": "/opt/Xilinx/Vivado/2024.1/bin/xvlog",
+	// "verilog.lint.xvlog.runAtFileLocation": true,
 
-	"verilog.ctags.path": "/usr/bin/ctags",
-	// "verilog.linting.xvlog.arguments": "-I /opt/Xilinx/Vivado/2024.1/data/xsim/system_verilog/uvm_include/uvm_macros.svh",
 
 	// --- Language: Haskell -------------------------------------------------------
 	"haskell.ghcupExecutablePath": "~/.ghcup/bin/ghcup",
 	"haskell.manageHLS": "GHCup",
+	
+	
 
 	// --- CMake -------------------------------------------------------------------
 	"cmake.configureOnOpen": false,
@@ -512,5 +539,9 @@
 		"vscode.coffeescript"
 	],
 	"window.density.editorTabHeight": "compact",
+	"workbench.activityBar.location": "hidden",
 	// "extensions.ignoreRecommendations": true,
+	// "editor.suggest.localityBonus": true,
+	// "editor.suggestSelection": "first",
+	// "editor.suggest.showWords": false,
 }
