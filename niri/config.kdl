@@ -124,7 +124,7 @@ workspace "torrent" {}
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
-	gaps 10
+	gaps 5
 
     center-focused-column "never"
 
@@ -633,8 +633,8 @@ gestures {
     // }
 
     hot-corners {
-        // off
-        top-left
+        off
+        // top-left
         // top-right
         // bottom-left
         // bottom-right
@@ -685,6 +685,7 @@ window-rule {
 	match app-id=r#"nwg-look"#
 	match app-id=r#"Nwg-look"#
     match app-id=r#"alacritty-float"#
+    match app-id=r#"org.prismlauncher.PrismLauncher"#
     match app-id=r#"org.kde.kdeconnect.(app|sms)"#
 	match app-id=r#"git-credential-manager"# title=r#"Connect to GitHub"#
 
@@ -777,7 +778,7 @@ window-rule {
 // wallpaper
 
 layer-rule {
-	match namespace="^swww-daemon$"
+	match namespace="^awww-daemon$"
 
     place-within-backdrop true
 }
@@ -806,7 +807,7 @@ layer-rule {
 
 
 spawn-at-startup "mako"
-spawn-at-startup "swww-daemon"
+spawn-at-startup "awww-daemon"
 spawn-at-startup "kdeconnectd"
 spawn-at-startup "swayosd-server"
 
