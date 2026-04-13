@@ -36,7 +36,9 @@ PRESERVE=(
     "README.md"
     "LICENSE"
     ".gitignore"
-    "wallpaper"
+    ".gitmodules"
+
+    "spotify"
 )
 
 # -- clean repo dir --------------------------------------------
