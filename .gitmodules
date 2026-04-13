@@ -1,0 +1,3 @@
+[submodule "spotify"]
+	path = spotify
+	url = https://github.com/laperex/spotify

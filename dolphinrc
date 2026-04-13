@@ -18,7 +18,7 @@ ViewPropsTimestamp=2024,5,23,11,40,29.78
 
 [IconsMode]
 IconSize=64
-PreviewSize=80
+PreviewSize=112
 
 [InformationPanel]
 previewsAutoPlay=true
@@ -29,12 +29,12 @@ Places Icons Static Size=22
 
 [MainWindow]
 MenuBar=Disabled
+ToolBarsMovable=Enabled
 
 [PreviewSettings]
 Plugins=appimagethumbnail,audiothumbnail,blenderthumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mobithumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,svgthumbnail,textthumbnail,ffmpegthumbs
 
 [Search]
-Location=Everywhere
 SearchTool=Baloo
 What=FileContents
 

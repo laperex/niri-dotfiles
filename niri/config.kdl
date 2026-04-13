@@ -65,10 +65,10 @@ input {
         // middle-emulation
     }
 
-	warp-mouse-to-focus mode="center-xy-always"
+	warp-mouse-to-focus
 
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
-    focus-follows-mouse
+    focus-follows-mouse max-scroll-amount="35%"
 }
 
 // You can configure outputs by their name, which you can find
@@ -285,13 +285,13 @@ screenshot-path "~/Pictures/Screenshots/Screenshot_%Y-%m-%d %H-%M-%S.png"
 // The wiki explains how to configure individual animations:
 // https://yalter.github.io/niri/Configuration:-Animations
 animations {
-	horizontal-view-movement {
-        spring damping-ratio=0.8 stiffness=500 epsilon=0.0001
-    }
+	// horizontal-view-movement {
+    //     spring damping-ratio=0.8 stiffness=500 epsilon=0.0001
+    // }
 	
-	workspace-switch {
-        spring damping-ratio=0.8 stiffness=500 epsilon=0.0001
-    }
+	// workspace-switch {
+    //     spring damping-ratio=0.8 stiffness=500 epsilon=0.0001
+    // }
 }
 
 
@@ -316,8 +316,10 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn "rofi" "-show" "combi" "-theme" ".config/rofi/launcher.rasi" "-theme-str" "listview { lines: 15; }"; }
+	Alt+Space { spawn-sh "rofi -show window -modes window -theme .config/rofi/launcher.rasi"; }
 	Mod+M { spawn "networkmanager_dmenu" "-theme" ".config/rofi/launcher.rasi" "-theme-str" "listview { lines: 20; }"; }
 	Mod+N { spawn-sh "fd --type f -e pdf . $HOME | rofi -keep-right -dmenu -i -theme launcher -multi-select -no-custom  -p 'FILE  ' | xargs -I {} okular {}"; }
+	Mod+B { spawn-sh "fd --type f -e mkv -e mp4 . $HOME | rofi -keep-right -dmenu -i -theme launcher -multi-select -no-custom -p 'FILE  ' | xargs -tr -d '\n' mpv"; }
 
     Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Alt+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
@@ -378,11 +380,18 @@ binds {
     // Alt+Down  { focus-window-down; }
     // Alt+Up    { focus-window-up; }
 	
-	Mod+Comma			{ focus-column-left; }
-	Mod+Shift+Comma		{ focus-column-first; }
+	// Mod+Comma			{ focus-column-left; }
+	// Mod+Shift+Comma		{ focus-column-first; }
 
-    Mod+Period			{ focus-column-right; }
-    Mod+Shift+Period	{ focus-column-last; }
+    // Mod+Period			{ focus-column-right; }
+    // Mod+Shift+Period	{ focus-column-last; }
+	
+	Mod+Comma			{ spawn-sh "~/.local/bin/scripts/niri_switch_column focus-column-left"; }
+	Mod+Shift+Comma		{ spawn-sh "~/.local/bin/scripts/niri_switch_column focus-column-first"; }
+
+    Mod+Period			{ spawn-sh "~/.local/bin/scripts/niri_switch_column focus-column-right"; }
+    Mod+Shift+Period	{ spawn-sh "~/.local/bin/scripts/niri_switch_column focus-column-last"; }
+
 
     // Alt+Home { move-column-to-first; }
     // Alt+End  { move-column-to-last; }
@@ -590,21 +599,21 @@ binds {
 // 
 
 recent-windows {
-    debounce-ms 0
+    // debounce-ms 0
 
-    open-delay-ms 0
+    // open-delay-ms 300
 
-    highlight {
-        active-color "#999999ff"
-        urgent-color "#ff9999ff"
-        padding 5
-        corner-radius 0
-    }
+    // highlight {
+    //     active-color "#999999ff"
+    //     urgent-color "#ff9999ff"
+    //     padding 5
+    //     corner-radius 0
+    // }
 
-    previews {
-        max-height 680
-        max-scale 0.5
-    }
+    // previews {
+    //     max-height 680
+    //     max-scale 0.5
+    // }
 
     binds {
         Alt+Tab         { next-window scope="all"; }
@@ -645,12 +654,12 @@ overview {
 	zoom 0.5
 	
     workspace-shadow {
-		on
-		
-        softness 3
-        spread 3
-        offset x=0 y=0
-		color "#000000c0"
+		off
+
+        // softness 3
+        // spread 3
+        // offset x=0 y=0
+		// color "#000000c0"
         // draw-behind-window true
     }
 }
@@ -733,8 +742,9 @@ window-rule {
 
 window-rule {
 	match app-id=r#"spotify"#
+	// match title=r#"Original profile — Mozilla Firefox"#
 	
-	opacity 0.9
+	opacity 0.95
 }
 
 // Firefox PiP
@@ -810,6 +820,7 @@ spawn-at-startup "mako"
 spawn-at-startup "awww-daemon"
 spawn-at-startup "kdeconnectd"
 spawn-at-startup "swayosd-server"
+spawn-at-startup "rofi-polkit-agent"
 
 spawn-at-startup ".local/bin/scripts/playerctl-playerd"
 spawn-at-startup ".local/bin/scripts/spotify_notifyd"

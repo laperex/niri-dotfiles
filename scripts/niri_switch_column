@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# focused=$(niri msg --json focused-window)
+is_floating=$(niri msg --json windows | jq '
+  [.[] | select(.focus_timestamp != null)]
+  | sort_by(.focus_timestamp.secs, .focus_timestamp.nanos)
+  | last
+  | if .is_floating then 1 else 0 end
+')
+
+if [ "$is_floating" -gt 0 ]; then
+    niri msg action switch-focus-between-floating-and-tiling
+    niri msg action $1
+    niri msg action switch-focus-between-floating-and-tiling
+else
+    niri msg action $1
+fi

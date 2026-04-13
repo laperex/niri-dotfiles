@@ -306,3 +306,11 @@
 @-moz-document domain("music.youtube.com") {
 	*{ border-radius: 0 !important; }
 }
+
+@-moz-document domain("claude.ai") {
+	*{ border-radius: 0 !important; }
+}
+
+@-moz-document domain("gemini.ai") {
+	*{ border-radius: 0 !important; }
+}

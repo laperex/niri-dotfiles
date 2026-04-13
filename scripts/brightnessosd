@@ -5,8 +5,8 @@
 ACTION="$1"
 
 # get current brightness percentage before changing
-CUR=$(brightnessctl --class=backlight get)
-MAX=$(brightnessctl --class=backlight max)
+CUR=$(brightnessctl -d intel_backlight --class=backlight get)
+MAX=$(brightnessctl -d intel_backlight --class=backlight max)
 PCT_INT=$(( CUR * 100 / MAX ))
 
 # dynamic step based on current level
@@ -19,8 +19,8 @@ else
 fi
 
 case "$ACTION" in
-    raise) brightnessctl --class=backlight set "${STEP}+" ;;
-    lower) brightnessctl --class=backlight set "${STEP}-" --min-val=1 ;;
+    raise) brightnessctl -d intel_backlight --class=backlight set "${STEP}+" ;;
+    lower) brightnessctl -d intel_backlight --class=backlight set "${STEP}-" --min-val=1 ;;
 esac
 
 # get updated brightness after change

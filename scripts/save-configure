@@ -31,16 +31,25 @@ echo "  save-configs - backing up dotfiles to: $REPO"
 echo "  --------------------------------------------"
 echo ""
 
+# -- files/dirs to preserve from cleaning ---------------------
+PRESERVE=(
+    "README.md"
+    "LICENSE"
+    ".gitignore"
+    "wallpaper"
+)
+
 # -- clean repo dir --------------------------------------------
 info "cleaning repo dir"
-find "$REPO" -mindepth 1 \
-    ! -path "$REPO/.git" \
-    ! -path "$REPO/.git/*" \
-    ! -name "save-configs" \
-    -maxdepth 1 \
+EXCLUDE_ARGS=( ! -path "$REPO/.git" ! -path "$REPO/.git/*" ! -name "save-configs" )
+for item in "${PRESERVE[@]}"; do
+    EXCLUDE_ARGS+=( ! -name "$item" )
+done
+
+find "$REPO" -mindepth 1 -maxdepth 1 \
+    "${EXCLUDE_ARGS[@]}" \
     -exec rm -rf {} + 2>/dev/null || true
 ok "cleaned $REPO"
-echo ""
 
 # -- rofi ------------------------------------------------------
 info "rofi"
@@ -89,6 +98,7 @@ save "$HOME/.local/bin/scripts/spotify_notifyd"    "scripts/spotify_notifyd"
 save "$HOME/.local/bin/scripts/playerctl-playerd"  "scripts/playerctl-playerd"
 save "$HOME/.local/bin/scripts/playerctl-control"  "scripts/playerctl-control"
 save "$HOME/.local/bin/scripts/save-configure"     "scripts/save-configure"
+save "$HOME/.local/bin/scripts/niri_switch_column" "scripts/niri_switch_column"
 
 # -- swayosd ---------------------------------------------------
 info "swayosd"
@@ -114,6 +124,10 @@ save "$HOME/.config/qt5ct/qt5ct.conf"   "qt5ct/qt5ct.conf"
 info "ironbar"
 save "$HOME/.config/ironbar"   "ironbar"
 
+# # -- spotify package -------------------------------------------------
+# info "spotify-1:1.2.84.476-1-x86_64"
+# save "$HOME/.local/share/spotify/spotify-1:1.2.84.476-1-x86_64.pkg.tar.zst"   "spotify/spotify-1:1.2.84.476-1-x86_64.pkg.tar.zst"
+
 # -- spicetify -------------------------------------------------
 info "spicetify"
 save "$HOME/.config/spicetify/Themes/catppuccin/color.ini"   "spicetify/Themes/catppuccin/color.ini"
@@ -135,6 +149,15 @@ save "$HOME/.config/user-dirs.dirs"   "user-dirs.dirs"
 # -- dolphinrc -------------------------------------------------
 info "dolphinrc"
 save "$HOME/.config/dolphinrc"   "dolphinrc"
+
+# -- wallpaper -------------------------------------------------
+info "wallpaper"
+WALLPAPER=$(awww query 2>/dev/null | awk -F 'image: ' '{print $2}' | head -1)
+if [ -n "$WALLPAPER" ]; then
+    save "$WALLPAPER" "wallpaper.${WALLPAPER##*.}"
+else
+    skip "awww daemon not running or no wallpaper set"
+fi
 
 # -- done ------------------------------------------------------
 echo ""

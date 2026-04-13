@@ -1,0 +1,108 @@
+# ~/.config/ironbar/config.toml
+# Styled to match the polybar look from bspwm (thin bar, floating module pills)
+#
+# Launch from niri config.kdl:
+#   spawn-at-startup "ironbar"
+# Or with dynamic primary color:
+#   spawn-at-startup "sh" "-c" "printf ':root{--primary:%s}\n' \"$_PRIMARY_COLOR\" > ~/.config/ironbar/colors.css && ironbar"
+
+position        = "top"
+anchor_to_edges = true
+height          = 28        # 26pt × (78dpi ÷ 72) = 28.2px → 28px
+margin.top      = 4
+margin.left     = 5
+margin.right    = 5
+
+# ─── LEFT ──────────────────────────────────────────────────────────────────────
+
+[[start]]
+type         = "workspaces"
+name         = "workspaces"
+class        = "workspaces"
+all_monitors = false
+
+[[start]]
+type                = "focused"
+name                = "focused"
+class               = "focused"
+truncate.mode       = "end"
+truncate.max_length = 50
+
+# ─── CENTER ────────────────────────────────────────────────────────────────────
+
+[[center]]
+type        = "music"
+name        = "music"
+class       = "music"
+player_type = "mpris"
+format      = "{title} - {artist}"
+truncate.mode       = "end"
+truncate.max_length = 40
+on_click_left  = "playerctl play-pause"
+on_scroll_up   = "playerctl previous"
+on_scroll_down = "playerctl next"
+
+[[center]]
+type  = "script"
+name  = "cava"
+class = "cava"
+cmd   = "~/.config/polybar/scripts/cava.sh"
+mode  = "watch"
+
+# ─── RIGHT ─────────────────────────────────────────────────────────────────────
+
+[[end]]
+type     = "sys_info"
+name     = "cpu"
+class    = "cpu"
+format   = [" {cpu_percent:.0}%"]
+interval.cpu = 1
+
+[[end]]
+type     = "script"
+name     = "temperature"
+class    = "temperature"
+cmd      = "sensors | awk -F'[+°]' '/Package id 0|Tdie/{printf \"%s\", $2; exit}'"
+mode     = "poll"
+interval = 1000
+
+[[end]]
+type    = "battery"
+name    = "battery"
+class   = "battery"
+format  = "{icon} {percentage}%"
+thresholds.warning  = 20
+thresholds.critical = 12
+
+[[end]]
+type     = "sys_info"
+name     = "memory"
+class    = "memory"
+format   = [" {memory_used}"]
+interval.memory = 3
+
+[[end]]
+type           = "network_manager"
+name           = "network"
+class          = "network"
+on_click_left  = "rofi_network_manager"
+on_click_right = "rofi_network_manager"
+
+[[end]]
+type           = "bluetooth"
+name           = "bluetooth"
+class          = "bluetooth"
+on_click_left  = "blueman-manager"
+on_click_right = "~/.config/polybar/scripts/toggle_bluetooth.sh"
+
+[[end]]
+type   = "clock"
+name   = "time"
+class  = "time"
+format = "󱦟 %T"
+
+[[end]]
+type   = "clock"
+name   = "date"
+class  = "date"
+format = "󰃭 %a %d"

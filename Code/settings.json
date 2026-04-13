@@ -31,6 +31,7 @@
 	"editor.cursorBlinking": "solid",
 	"editor.cursorSmoothCaretAnimation": "on",
 	"editor.smoothScrolling": true,
+	// "output.smartScroll.enabled": true,
 	"editor.stickyScroll.enabled": false,
 	"editor.renderWhitespace": "none",
 	"editor.roundedSelection": false,
@@ -40,9 +41,9 @@
 	"editor.colorDecoratorsLimit": 5000,
 	"editor.defaultColorDecorators": "auto",
 	// --- Editor: UI ---------------------------------------------------------------
-	"editor.lineNumbers": "off",
-	"editor.glyphMargin": false,
-	"editor.folding": false,
+	"editor.lineNumbers": "on",
+	"editor.glyphMargin": true,
+	"editor.folding": true,
 	"editor.foldingHighlight": true,
 	"editor.minimap.enabled": false,
 	"editor.minimap.autohide": false,
@@ -148,6 +149,9 @@
 	// "[verilog]": {
 	// 	"editor.defaultFormatter": "eirikpre.systemverilog"
 	// },
+	"autopep8.args": [
+        "--max-line-length=160"
+    ],
 	"[systemverilog]": {
 		"editor.fontLigatures": false,
 		// "editor.bracketPairColorization.enabled": false
@@ -186,8 +190,8 @@
 		"*.v": "verilog"
 	},
 
-	"xvlog.path": "/opt/Xilinx/Vivado/2024.1/bin",
-	"xvlog.linting.arguments": "-L uvm",
+	"xvlog.path": "/opt/Xilinx/2025.2/Vivado/bin",
+	"xvlog.linting.arguments": "-L uvm -i /home/laperex/Programming/image_processing/srcs/rtl",
 	
 	"verible.formatting.arguments": "--indentation_spaces=4 --named_port_alignment=preserve --port_declarations_alignment=preserve --named_port_alignment=preserve --named_port_indentation=indent --named_parameter_indentation=preserve --port_declarations_indentation=indent",
 
@@ -204,26 +208,26 @@
 	// "systemverilog.formatCommand": "verible-verilog-format --indentation_spaces 4",
 	// "systemverilog.languageServer.path": "verible-verilog-ls",
 	// "systemverilog.languageServer.arguments": ["--rules_config_search"],
-	// "xvlog.path": "/opt/Xilinx/Vivado/2024.1/bin",
+	// "xvlog.path": "/opt/Xilinx/2025.2/Vivado/bin",
 	// "xvlog.linting.enabled": true
 	// // "verilog.ctags.enabled": false,
 	// // "verilog.ctags.path": "/usr/bin/ctags",
-	// "verible.path": "/usr/bin/verible-verilog-ls",
-	// "verible.arguments": ["--rules_config_search"],
+	// // "verible.path": "/usr/bin/verible-verilog-ls",
+	// // "verible.arguments": ["--rules_config_search"],
 	// "slang.path": "/home/laperex/.config/Code/User/globalStorage/hudson-river-trading.vscode-slang/install/v0.2.2/slang-server",
 	// "slang.args": [
 	// 	// "+incdir+/home/laperex/.temp/uvm-1.2/src"
 	// 	// "--ignore-unknown-modules",
 	// 	// "--suppress-warnings", "*",
 	// 	// "-Wno-unnamed-genblk",
-	// 	// "--include-path", "/opt/Xilinx/Vivado/2024.1/data/xsim/system_verilog/uvm_include",
-	// 	// "/opt/Xilinx/Vivado/2024.1/data/xsim/system_verilog/uvm_include/uvm_macros.svh",
-	// 	// "/opt/Xilinx/Vivado/2024.1/data/verilog/src/glbl.v"
+	// 	// "--include-path", "/opt/Xilinx/2025.2/Vivado/data/xsim/system_verilog/uvm_include",
+	// 	// "/opt/Xilinx/2025.2/Vivado/data/xsim/system_verilog/uvm_include/uvm_macros.svh",
+	// 	// "/opt/Xilinx/2025.2/Vivado/data/verilog/src/glbl.v"
 	// ],
 	// slang.
 	// "slang.args": [
-	// 	"+incdir+/opt/Xilinx/Vivado/2024.1/data/xsim/system_verilog/uvm_include",
-	//     "/opt/Xilinx/Vivado/2024.1/data/xsim/system_verilog/src/uvm_pkg.sv",
+	// 	"+incdir+/opt/Xilinx/2025.2/Vivado/data/xsim/system_verilog/uvm_include",
+	//     "/opt/Xilinx/2025.2/Vivado/data/xsim/system_verilog/src/uvm_pkg.sv",
 	//     "+incdir+srcs/rtl",
 	//     "+incdir+srcs/sim",
 	//     "srcs/rtl/**/*.sv",
@@ -240,7 +244,7 @@
 	// "verilog.lint.verilator.enabled": false,
 	// "verilog.lint.xcelium.enabled": false,
 	// "verilog.lint.xvlog.enabled": false,
-	// // "verilog.lint.xvlog.path": "/opt/Xilinx/Vivado/2024.1/bin/xvlog",
+	// // "verilog.lint.xvlog.path": "/opt/Xilinx/2025.2/Vivado/bin/xvlog",
 	// "verilog.lint.xvlog.runAtFileLocation": true,
 	// --- Language: Haskell -------------------------------------------------------
 	"haskell.ghcupExecutablePath": "~/.ghcup/bin/ghcup",
@@ -349,9 +353,9 @@
 		"button.secondaryBackground": "#B4BEFE74",
 		"editor.lineHighlightBackground": "#B4BEFE12",
 		
-		"editor.foldBackground": "#B4BEFE00", // edit
-		"editor.foldPlaceholderForeground": "#ff000000", //edit
-		"editorGutter.foldingControlForeground": "#ff000000",
+		// "editor.foldBackground": "#B4BEFE00", // edit
+		// "editor.foldPlaceholderForeground": "#ff000000", //edit
+		// "editorGutter.foldingControlForeground": "#ff000000",
 		
 		"widget.border": "#B4BEFEd0",
 		"icon.foreground": "#B4BEFE",
@@ -429,7 +433,7 @@
 	"jupyter.askForKernelRestart": false,
 	// --- Hardware / EDA -----------------------------------------------------------
 	"digital-ide.welcome.show": false,
-	"digital-ide.prj.vivado.install.path": "/opt/Xilinx/Vivado/2024.1/bin/",
+	"digital-ide.prj.vivado.install.path": "/opt/Xilinx/2025.2/Vivado/bin/",
 	"EIDE.Repository.UseProxy": false,
 	"EIDE.C51.INI.Path": "/home/laperex/.wine/drive_c/Keil_v5/C51/BIN/C51.exe",
 	"KeilAssistant.Keil.HOME": {
@@ -546,6 +550,9 @@
 				}
 			]
 		}
+	},
+	"[python]": {
+		"editor.defaultFormatter": "ms-python.autopep8"
 	},
 	// "extensions.ignoreRecommendations": true,
 	// "editor.suggest.localityBonus": true,

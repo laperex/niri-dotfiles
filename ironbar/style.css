@@ -1,27 +1,209 @@
-/* 1. Make the entire main window completely transparent */
-.background {
-    background: transparent;
-    border: none;
-    box-shadow: none;
-}
+/* ~/.config/ironbar/style.css
+ *
+ * Matches the polybar aesthetic from bspwm:
+ *   - Fully transparent bar background (gaps between modules show wallpaper)
+ *   - Each module = dark semi-transparent pill, 1px primary accent top & bottom
+ *   - Ultra-compact font and padding
+ *   - Workspaces: active = solid primary fill / black text
+ *                 occupied = transparent bg / primary text
+ *                 empty = transparent bg / grey text
+ *
+ * Set --primary to your $_PRIMARY_COLOR value.
+ * For dynamic color from env, see the spawn-at-startup snippet in config.toml.
+ * Uncomment @import below if using that approach.
+ */
 
-/* 2. Shrink-wrap your styling around the right-side modules */
-.end {
-    background-color: #282a36; /* Your preferred color */
-    border-radius: 12px;       /* The pill shape */
-    
-    /* Push the pill away from the physical screen edges */
-    margin-top: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    
-    /* Inner spacing so the text doesn't touch the pill's edge */
-    padding: 4px 16px;         
-    border: 1px solid #44475a; 
-}
+/* @import "colors.css"; */
 
-/* Optional: Add some spacing between the individual widgets inside the pill */
-.end > * {
-    margin-left: 6px;
-    margin-right: 6px;
-}
+/* ─── Colors ─────────────────────────────────────────────────────────────────── */
+:root {
+	--primary:    #7aa2f7;        /* ← your $_PRIMARY_COLOR                        */
+	--foreground: #f2eef1;
+	--bg:         rgba(0, 0, 0, 0.82);
+	--alert:      #ff4d4d;
+  }
+  
+  /* ─── Reset ──────────────────────────────────────────────────────────────────── */
+  * {
+	font-family:   "Mononoki Nerd Font", "Symbols Nerd Font 2048-em",
+				   "Noto Color Emoji", "Noto Sans CJK JP", sans-serif;
+	font-size:     15px;   /* font-size=14pt × (78dpi ÷ 72) = 15.2px → 15px      */
+	border:        none;
+	border-radius: 0;
+	margin:        0;
+	padding:       0;
+	box-shadow:    none;
+  }
+  
+  /* ─── Bar shell — fully transparent, no background, no border ───────────────── */
+  .ironbar-bar {
+	background: transparent;
+	border:     none;
+	box-shadow: none;
+	padding:    0;
+  }
+  
+  /* ─── Module pill — the shared look every module gets ───────────────────────── */
+  /* Ironbar wraps each module in a .module box.
+	 We apply the dark bg + 1px primary accent lines here.                        */
+  .module {
+	background:    var(--bg);
+	color:         var(--foreground);
+	padding:       0 4px;
+	margin:        0;
+	border-top:    1px solid var(--primary);
+	border-bottom: 1px solid var(--primary);
+	border-left:   none;
+	border-right:  none;
+  }
+  
+  /* Buttons inside modules (used by workspaces, bluetooth, battery popup, etc.) */
+  .module button,
+  .module > button {
+	background:    transparent;
+	border:        none;
+	border-radius: 0;
+	padding:       0 2px;
+	color:         inherit;
+  }
+  
+  /* ─── Workspaces ─────────────────────────────────────────────────────────────── */
+  /* The workspaces module itself has no pill — each button IS the pill            */
+  .workspaces {
+	background: transparent;
+	border:     none;
+	padding:    0;
+  }
+  
+  .workspaces .item {
+	background:    var(--bg);
+	color:         var(--primary);       /* occupied = primary text                */
+	padding:       0 8px;
+	border-top:    1px solid var(--primary);
+	border-bottom: 1px solid var(--primary);
+	border-left:   none;
+	border-right:  none;
+	font-size:     15px;
+  .workspaces .item.focused {
+	background: var(--primary);
+	color:      #000000;
+	padding:    0 8px;
+  }
+  
+  /* Urgent */
+  .workspaces .item.urgent {
+	background: var(--alert);
+	color:      #000000;
+  }
+  
+  /* Empty workspace: grey text, same dark bg                                      */
+  .workspaces .item.inactive {
+	color: #707880;
+  }
+  
+  /* ─── Focused window title ───────────────────────────────────────────────────── */
+  .focused {
+	background:    var(--bg);
+	color:         var(--foreground);
+	padding:       0 6px;
+	border-top:    1px solid var(--primary);
+	border-bottom: 1px solid var(--primary);
+  }
+  
+  /* ─── Music / Spotify ────────────────────────────────────────────────────────── */
+  .music {
+	background:    var(--bg);
+	color:         var(--foreground);
+	padding:       0 4px;
+	border-top:    1px solid var(--primary);
+	border-bottom: 1px solid var(--primary);
+  }
+  
+  .music button { color: var(--primary); }
+  
+  /* ─── Cava — sits flush next to music, same accent lines ─────────────────────── */
+  .cava {
+	background:    var(--bg);
+	color:         var(--primary);
+	padding:       0 4px;
+	border-top:    1px solid var(--primary);
+	border-bottom: 1px solid var(--primary);
+	font-size:     15px;
+  }
+  
+  /* ─── CPU ────────────────────────────────────────────────────────────────────── */
+  .cpu {
+	background:    var(--bg);
+	color:         var(--foreground);
+	padding:       0 4px;
+	border-top:    1px solid var(--primary);
+	border-bottom: 1px solid var(--primary);
+  }
+  
+  /* ─── Temperature ────────────────────────────────────────────────────────────── */
+  .temperature {
+	background:    var(--bg);
+	color:         var(--foreground);
+	padding:       0 4px;
+	border-top:    1px solid var(--primary);
+	border-bottom: 1px solid var(--primary);
+  }
+  
+  /* ─── Battery ────────────────────────────────────────────────────────────────── */
+  .battery {
+	background:    var(--bg);
+	color:         var(--foreground);
+	padding:       0 4px;
+	border-top:    1px solid var(--primary);
+	border-bottom: 1px solid var(--primary);
+  }
+  
+  .battery.warning,
+  .battery.critical {
+	color:        var(--alert);
+	border-color: var(--alert);
+  }
+  
+  /* ─── Memory ─────────────────────────────────────────────────────────────────── */
+  .memory {
+	background:    var(--bg);
+	color:         var(--foreground);
+	padding:       0 4px;
+	border-top:    1px solid var(--primary);
+	border-bottom: 1px solid var(--primary);
+  }
+  
+  /* ─── Network ────────────────────────────────────────────────────────────────── */
+  .network {
+	background:    var(--bg);
+	color:         var(--foreground);
+	padding:       0 4px;
+	border-top:    1px solid var(--primary);
+	border-bottom: 1px solid var(--primary);
+  }
+  
+  .network.disconnected {
+	color:        var(--alert);
+	border-color: var(--alert);
+  }
+  
+  /* ─── Bluetooth ──────────────────────────────────────────────────────────────── */
+  .bluetooth {
+	background:    var(--bg);
+	color:         var(--primary);
+	padding:       0 6px;
+	border-top:    1px solid var(--primary);
+	border-bottom: 1px solid var(--primary);
+  }
+  
+  .bluetooth.disconnected { color: #707880; }
+  
+  /* ─── Clock: time + date ─────────────────────────────────────────────────────── */
+  .time,
+  .date {
+	background:    var(--bg);
+	color:         var(--foreground);
+	padding:       0 4px;
+	border-top:    1px solid var(--primary);
+	border-bottom: 1px solid var(--primary);
+  }
