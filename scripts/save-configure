@@ -37,8 +37,7 @@ PRESERVE=(
     "LICENSE"
     ".gitignore"
     ".gitmodules"
-
-    "spotify",
+    "spotify"
 	"theme"
 )
 
