@@ -4,7 +4,7 @@ CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/spotify-notify"
 mkdir -p "$CACHE_DIR"
 
 NOTIFY_ID_FILE="/tmp/spotify-notify-id"
-NOTIFY_ID=69420
+NOTIFY_ID=6942017
 
 playerctl --player=spotify metadata --format $'{{title}}\t{{artist}}\t{{album}}\t{{mpris:artUrl}}' --follow | \
 while IFS=$'\t' read -r title artist album art_url; do

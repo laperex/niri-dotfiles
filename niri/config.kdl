@@ -5,6 +5,9 @@
 environment {
     XDG_CURRENT_DESKTOP "KDE"
 	_JAVA_AWT_WM_NONREPARENTING "1"
+
+	// XVIV_VIVADO_DIR "/opt/Xilinx/2025.2/Vivado"
+	// XVIV_VITIS_DIR "/opt/Xilinx/2025.2/Vitis"
 }
 
 // Input device configuration.
@@ -296,6 +299,7 @@ animations {
 
 
 binds {
+	Mod+N { spawn-sh "fd --type f -e pdf . $HOME | rofi -keep-right -dmenu -i -theme launcher -multi-select -no-custom  -p 'FILE  ' | xargs -I {} okular {}"; }
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
     // in the end. To find an XKB name for a particular key, you may use a program
     // like wev.
@@ -318,7 +322,6 @@ binds {
     Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn "rofi" "-show" "combi" "-theme" ".config/rofi/launcher.rasi" "-theme-str" "listview { lines: 15; }"; }
 	Alt+Space { spawn-sh "rofi -show window -modes window -theme .config/rofi/launcher.rasi"; }
 	Mod+M { spawn "networkmanager_dmenu" "-theme" ".config/rofi/launcher.rasi" "-theme-str" "listview { lines: 20; }"; }
-	Mod+N { spawn-sh "fd --type f -e pdf . $HOME | rofi -keep-right -dmenu -i -theme launcher -multi-select -no-custom  -p 'FILE  ' | xargs -I {} okular {}"; }
 	Mod+B { spawn-sh "fd --type f -e mkv -e mp4 . $HOME | rofi -keep-right -dmenu -i -theme launcher -multi-select -no-custom -p 'FILE  ' | xargs -tr -d '\n' mpv"; }
 
     Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
@@ -373,7 +376,7 @@ binds {
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
     // or do a four-finger swipe up on a touchpad. 
-    Mod+Escape repeat=false { toggle-overview; }
+    Mod+Escape repeat=true { toggle-overview; }
 
     Mod+W repeat=false { close-window; }
 
@@ -556,8 +559,8 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.
-    Mod+V { toggle-window-floating; }
-    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+    Mod+Q { toggle-window-floating; }
+    Mod+Shift+Q { switch-focus-between-floating-and-tiling; }
 
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
@@ -687,6 +690,15 @@ window-rule {
 }
 
 window-rule {
+	match app-id=r#"org.kde.dolphin"#
+	match app-id=r#"org.kde.filelight"#
+
+	open-floating true
+}
+
+window-rule {
+    match app-id=r#"org.prismlauncher.PrismLauncher"#
+	match app-id=r#"blueman-manager"#
 	match app-id=r#"kvantummanager"#
 	match app-id=r#"qt6ct"#
 	match app-id=r#"qt5ct"#
@@ -694,7 +706,6 @@ window-rule {
 	match app-id=r#"nwg-look"#
 	match app-id=r#"Nwg-look"#
     match app-id=r#"alacritty-float"#
-    match app-id=r#"org.prismlauncher.PrismLauncher"#
     match app-id=r#"org.kde.kdeconnect.(app|sms)"#
 	match app-id=r#"git-credential-manager"# title=r#"Connect to GitHub"#
 
@@ -820,7 +831,7 @@ spawn-at-startup "mako"
 spawn-at-startup "awww-daemon"
 spawn-at-startup "kdeconnectd"
 spawn-at-startup "swayosd-server"
-spawn-at-startup "rofi-polkit-agent"
+spawn-sh-at-startup "rofi-polkit-agent -theme $HOME/.config/rofi/polkit.rasi"
 
 spawn-at-startup ".local/bin/scripts/playerctl-playerd"
 spawn-at-startup ".local/bin/scripts/spotify_notifyd"
@@ -829,6 +840,8 @@ spawn-at-startup "firefox"
 spawn-at-startup "code"
 spawn-at-startup "spotify"
 spawn-at-startup "qbitorrent"
+
+spawn-at-startup "nm-applet"
 
 debug {
     honor-xdg-activation-with-invalid-serial

@@ -24,6 +24,11 @@
 
 @import url(firefox-csshacks/chrome/navbar_tabs_oneliner_tabs_on_left.css);
 
+
+ytd-watch-flexy[split-scroll][fixed-default-panels] #playlist.ytd-watch-flexy {
+	max-height: calc(var(--ytd-watch-flexy-panel-max-height)) !important;
+}
+
 * {
     border-radius: 0 !important;
 	

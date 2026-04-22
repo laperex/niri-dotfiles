@@ -17,8 +17,8 @@ Version=202
 ViewPropsTimestamp=2024,5,23,11,40,29.78
 
 [IconsMode]
-IconSize=64
-PreviewSize=112
+IconSize=80
+PreviewSize=96
 
 [InformationPanel]
 previewsAutoPlay=true

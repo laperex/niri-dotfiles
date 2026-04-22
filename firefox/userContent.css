@@ -273,6 +273,10 @@
 
 @-moz-document url-prefix('https://studio.youtube.com') {
 	*{ border-radius: 0 !important; }
+
+	ytd-watch-flexy[split-scroll][fixed-default-panels] #playlist.ytd-watch-flexy {
+		max-height: calc(var(--ytd-watch-flexy-panel-max-height)) !important;
+	}
 }
 
 @-moz-document regexp('<URL>') {

@@ -5,3 +5,12 @@
 <img width="2560" height="1600" alt="5" src="https://github.com/user-attachments/assets/2349f126-8bf1-452c-b381-671fa56504ad" />
 <img width="2560" height="1600" alt="6" src="https://github.com/user-attachments/assets/bb3a3814-36e0-4acd-80fb-09a689ce161d" />
 <img width="2560" height="1600" alt="7" src="https://github.com/user-attachments/assets/e675afe1-d848-43cd-abdd-56dec264f73f" />
+
+
+# Dependencies
+
+```bash
+yay -S hyprpicker spotify visual-studio-code-bin networkmanager-dmenu-git swaylock-effects
+
+sudo pacman -S alacritty swayosd awww rofi-wayland dolphin firefox mako kdeconnect playerctl mpv okular fd qbittorrent network-manager-applet gnome-themes-extra kvantum kvantum-qt5 nwg-look lxappearance breeze
+```

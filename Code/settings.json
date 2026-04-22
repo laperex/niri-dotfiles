@@ -75,6 +75,15 @@
 	// 	"*.rmd": "markdown",
 	// 	"*.xci": "json",
 	// 	// "*.sv": "systemverilogheader"
+	
+	"[json]": {
+		"editor.links": true
+	},
+	"[jsonc]": {
+		"editor.links": true
+	},
+
+	"editor.links": true,
 	// },
 	// --- Terminal -----------------------------------------------------------------
 	"terminal.integrated.defaultProfile.linux": "zsh",
@@ -554,6 +563,8 @@
 	"[python]": {
 		"editor.defaultFormatter": "ms-python.autopep8"
 	},
+	"git.ignoreRebaseWarning": true,
+	"git.replaceTagsWhenPull": true,
 	// "extensions.ignoreRecommendations": true,
 	// "editor.suggest.localityBonus": true,
 	// "editor.suggestSelection": "first",
