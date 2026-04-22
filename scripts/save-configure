@@ -38,7 +38,8 @@ PRESERVE=(
     ".gitignore"
     ".gitmodules"
 
-    "spotify"
+    "spotify",
+	"theme"
 )
 
 # -- clean repo dir --------------------------------------------
